@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.HomeCommunityController">
+   <children>
+      <ImageView fx:id="back" fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@back.JPG" />
+         </image>
+      </ImageView>
+      <VBox layoutX="-1.0" prefHeight="500.0" prefWidth="170.0">
+         <children>
+            <Button fx:id="btnFrBoard" mnemonicParsing="false" onAction="#freeBoard" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLicenseInfo" mnemonicParsing="false" onAction="#licenseInfo" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnLicenseTip" mnemonicParsing="false" onAction="#licenseTip" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;">
+               <font>
+                  <Font name="THEJung140" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnMeal" mnemonicParsing="false" onAction="#meal" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: TRANSPARENT;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="community_window" layoutX="170.0" maxHeight="500.0" minHeight="500.0" prefHeight="500.0" prefWidth="630.0" />
+   </children>
+</AnchorPane>

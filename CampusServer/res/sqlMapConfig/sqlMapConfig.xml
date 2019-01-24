@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL MAP Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	
+	<properties resource="sqlMapConfig/sqlMapConfig.properties"/>
+	
+	<settings cacheModelsEnabled="true"
+			  enhancementEnabled="true"
+			  lazyLoadingEnabled="true"
+			  maxRequests="32"
+			  maxSessions="10"
+			  maxTransactions="5"
+			  useStatementNamespaces="true"/>
+			  
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}"/>
+			<property name="JDBC.ConnectionURL" value="${url}"/>
+			<property name="JDBC.Username" value="${user}"/>
+			<property name="JDBC.Password" value="${pass}"/>
+		</dataSource>
+	</transactionManager>
+	
+	<sqlMap resource="sqlMapping/admin.xml"/>
+	<sqlMap resource="sqlMapping/member_question.xml"/>
+	<sqlMap resource="sqlMapping/postscript.xml"/>
+	<sqlMap resource="sqlMapping/comment.xml"/>
+	<sqlMap resource="sqlMapping/member.xml"/>
+	<sqlMap resource="sqlMapping/qnaBoard.xml"/>
+	<sqlMap resource="sqlMapping/homework.xml"/>
+	<sqlMap resource="sqlMapping/unit.xml"/>
+	<sqlMap resource="sqlMapping/licenseBoard.xml"/>
+	<sqlMap resource="sqlMapping/question.xml"/>
+	<sqlMap resource="sqlMapping/freeboard.xml"/>
+	<sqlMap resource="sqlMapping/content.xml"/>
+	<sqlMap resource="sqlMapping/video.xml"/>
+	<sqlMap resource="sqlMapping/nbd.xml"/>
+	<sqlMap resource="sqlMapping/member_coupon.xml"/>
+	<sqlMap resource="sqlMapping/lecInfo.xml"/>
+	<sqlMap resource="sqlMapping/coupon.xml"/>
+</sqlMapConfig>

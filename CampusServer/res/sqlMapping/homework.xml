@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="homework">
+	<typeAlias alias="HomeworkVO" type="vo.Homework_boardVO" />
+	
+	<select id="getAllBoard" resultClass="HomeworkVO">
+		select * from Homework_board order by to_number(substr(hwbd_id, 3)) DESC
+	</select>
+	<select id="subBoard" parameterClass="String" resultClass="HomeworkVO">
+		select * from Homework_board where hwbd_sub = #hwbd_sub# order by to_number(substr(hwbd_id, 3)) DESC
+	</select>
+	<select id="searchBoard" parameterClass="Map" resultClass="HomeworkVO">
+		select * from Homework_board where $colStr$ like #SearchStr# AND hwbd_sub like #sub# order by to_number(substr(hwbd_id, 3)) DESC
+	</select>
+	<insert id="insertHBoard" parameterClass="HomeworkVO">
+		insert into HOMEWORK_BOARD VALUES (
+			'HW'||home_seq.NEXTVAL, #hwbd_ti#, #hwbd_wrr#,
+			 SYSDATE, #hwbd_con#, #hwbd_frt#, #hwbd_memId#, #hwbd_sub#)
+	</insert>
+	<delete id="deleteBoard" parameterClass="String">
+		delete HOMEWORK_BOARD where hwbd_id = 'HW'||#hwbd_id#
+	</delete>
+	<update id="updateBoard" parameterClass="HomeworkVO">
+		update homework_board set hwbd_ti = #hwbd_ti#, hwbd_con = #hwbd_con#, hwbd_dt = sysdate, hwbd_sub = #hwbd_sub#, hwbd_frt = #hwbd_frt# where hwbd_id = 'HW'||#hwbd_id#
+	</update>
+</sqlMap>

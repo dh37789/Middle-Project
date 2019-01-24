@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="510.0" maxWidth="280.0" minHeight="510.0" minWidth="280.0" prefHeight="510.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.mem_info.controller.cakeController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@케이크%20기프티콘.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfCak" alignment="CENTER" layoutX="71.0" layoutY="379.0" onAction="#CouponNum" />
+   </children>
+</AnchorPane>

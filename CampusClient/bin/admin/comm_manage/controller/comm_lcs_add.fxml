@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 관리자가 자격증 게시판에서 새글을 등록할때 -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.Comm_lcs_addController">
+   <children>
+      <Separator layoutY="58.0" prefHeight="0.0" prefWidth="600.0" />
+      <HBox layoutX="-1.0" layoutY="3.0" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label text="자격증 정보 등록 ">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <TextField fx:id="tfTitle" layoutX="60.0" layoutY="73.0" prefHeight="23.0" prefWidth="338.0" />
+      <Label layoutX="25.0" layoutY="74.0" text="제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taContents" layoutX="25.0" layoutY="110.0" prefHeight="353.0" prefWidth="552.0" />
+      <Button fx:id="btnExit" layoutX="527.0" layoutY="472.0" mnemonicParsing="false" onAction="#showList" prefHeight="23.0" prefWidth="50.0" text="종료" />
+      <Button fx:id="btnSave" layoutX="463.0" layoutY="472.0" mnemonicParsing="false" onAction="#update" prefHeight="23.0" prefWidth="50.0" text="저장" />
+   </children>
+</AnchorPane>

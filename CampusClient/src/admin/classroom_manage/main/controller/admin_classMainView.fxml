@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="606.0" prefWidth="801.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="admin.classroom_manage.main.controller.admin_classVideoViewController">
+   <children>
+      <Label layoutX="53.0" layoutY="128.0" text="강의 id">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="177.0" text="강의 명">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="229.0" text="강의 시간">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="276.0" text="강의 경로">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="317.0" text="단원 ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="366.0" text="단원 명">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="vd_id" layoutX="144.0" layoutY="127.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_nm" layoutX="144.0" layoutY="176.0" prefHeight="23.0" prefWidth="108.0" />
+      <TextField fx:id="vd_pltm" layoutX="144.0" layoutY="228.0" prefHeight="23.0" prefWidth="108.0" />
+      <TextField fx:id="vd_flrt" layoutX="144.0" layoutY="275.0" prefHeight="23.0" prefWidth="108.0" />
+      <TextField fx:id="vd_unid" layoutX="144.0" layoutY="316.0" prefHeight="23.0" prefWidth="108.0" />
+      <TextField fx:id="vd_unnm" layoutX="144.0" layoutY="365.0" prefHeight="23.0" prefWidth="108.0" />
+      <Label layoutX="50.0" layoutY="35.0" prefHeight="32.0" prefWidth="127.0" text="강의 설정">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <ListView layoutX="383.0" layoutY="159.0" prefHeight="398.0" prefWidth="337.0" />
+      <Label layoutX="420.0" layoutY="213.0" prefHeight="15.0" prefWidth="269.0" text="초급자바                                           un001" />
+      <Label layoutX="445.0" layoutY="170.0" text="단원 명" />
+      <Label layoutX="639.0" layoutY="169.0" text="단원 id" />
+      <Separator layoutX="385.0" layoutY="192.0" prefHeight="0.0" prefWidth="337.0" />
+      <Label layoutX="420.0" layoutY="260.0" prefHeight="15.0" prefWidth="269.0" text="고급자바                                           un002" />
+      <Label layoutX="423.0" layoutY="303.0" prefHeight="15.0" prefWidth="269.0" text="jquery                                              un003" />
+      <Label layoutX="423.0" layoutY="351.0" prefHeight="15.0" prefWidth="269.0" text="jsp                                                   un004" />
+      <Label layoutX="419.0" layoutY="403.0" prefHeight="15.0" prefWidth="269.0" text="데이터베이스                                     un005" />
+      <Separator layoutX="551.0" layoutY="159.0" orientation="VERTICAL" prefHeight="398.0" prefWidth="5.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가  팁을 클릭해 내용을 볼때-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.Comm_tip_viewController">
+   <children>
+      <TextField fx:id="tfTitle" editable="false" layoutX="60.0" layoutY="21.0" prefHeight="23.0" prefWidth="305.0" />
+      <TextField fx:id="tfDate" editable="false" layoutX="419.0" layoutY="21.0" prefHeight="23.0" prefWidth="158.0" />
+      <Label layoutX="25.0" layoutY="22.0" text="제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="373.0" layoutY="24.0" text="작성일">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taContents" editable="false" layoutX="24.0" layoutY="54.0" prefHeight="269.0" prefWidth="552.0" />
+      <Button fx:id="btnExit" layoutX="524.0" layoutY="444.0" mnemonicParsing="false" onAction="#exit" prefWidth="50.0" text="목록" />
+      <Button fx:id="btnDel" disable="true" layoutX="465.0" layoutY="444.0" mnemonicParsing="false" onAction="#delete" prefWidth="50.0" text="삭제" />
+      <Button fx:id="btnUpdate" disable="true" layoutX="407.0" layoutY="444.0" mnemonicParsing="false" onAction="#update" prefWidth="50.0" text="수정" />
+      <ScrollPane fx:id="paneReply" cacheHint="SCALE_AND_ROTATE" layoutX="24.0" layoutY="337.0" prefHeight="61.0" prefWidth="552.0">
+         <content>
+            <VBox fx:id="paneV" prefHeight="28.0" prefWidth="550.0" />
+         </content>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ScrollPane>
+      <TextField fx:id="tfReply" layoutX="25.0" layoutY="413.0" prefHeight="23.0" prefWidth="476.0" promptText="댓글을 입력해 주세요." />
+      <Button fx:id="btnReply" layoutX="507.0" layoutY="413.0" mnemonicParsing="false" onAction="#inReply" prefHeight="23.0" prefWidth="70.0" text="댓글 달기" />
+   </children>
+</AnchorPane>

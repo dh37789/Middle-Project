@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 자유게시판 목록 볼때 -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.FreeBoardController">
+   <children>
+      <HBox prefHeight="40.0" prefWidth="600.0">
+         <children>
+            <Label text="자유게시판">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutY="49.0" prefHeight="0.0" prefWidth="600.0" />
+      <TableView fx:id="frbd" layoutX="10.0" layoutY="56.0" onMouseClicked="#frbd_view" prefHeight="391.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="frbd_id" prefWidth="56.0" text="No." />
+            <TableColumn fx:id="frbd_ti" prefWidth="250.0" text="제목" />
+            <TableColumn fx:id="frbd_wrr" minWidth="0.0" prefWidth="69.0" text="글쓴이" />
+            <TableColumn fx:id="frbd_dt" prefWidth="136.0" text="작성일" />
+            <TableColumn fx:id="frbd_iNum" prefWidth="68.0" text="조회수" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="10.0" layoutY="454.0" prefHeight="37.0" prefWidth="580.0" style="-fx-background-color: transparent;">
+         <children>
+            <TextField fx:id="tf_search" layoutX="38.0" layoutY="7.0" onKeyReleased="#search" prefHeight="23.0" prefWidth="137.0" />
+            <Pagination fx:id="page" layoutX="190.0" layoutY="-3.0" prefHeight="43.0" prefWidth="204.0" />
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="3.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;">
+               <image>
+                  <Image url="@../../../home/community/controller/research.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

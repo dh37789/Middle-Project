@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 강의실에 입장했을때 메인화면-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="957.0" style="-fx-background-color: #C0C0A6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classRoom.main.controller.ClassroomController">
+   <children>
+      <AnchorPane layoutX="155.0" prefHeight="15.0" prefWidth="804.0">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="804.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@classmenu2.JPG" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_notice" layoutY="-2.0" mnemonicParsing="false" onAction="#btn_notice_click" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_qa" layoutX="209.0" layoutY="-1.0" mnemonicParsing="false" onAction="#btn_qa_click" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_pratice" layoutX="321.0" layoutY="-3.0" mnemonicParsing="false" onAction="#btn_pratice_click" prefHeight="39.0" prefWidth="108.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_pop" layoutX="429.0" layoutY="2.0" mnemonicParsing="false" onAction="#btn_pop_click" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_homework" layoutX="108.0" layoutY="-1.0" mnemonicParsing="false" onAction="#btn_homework_click" prefHeight="39.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <HBox fx:id="exitbox" alignment="CENTER_RIGHT" layoutX="715.0" prefHeight="39.0" prefWidth="87.0" spacing="5.0">
+               <children>
+                  <Label textFill="#ee2917">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="btn_home" layoutX="516.0" layoutY="4.0" mnemonicParsing="false" onAction="#btn_home_click" prefHeight="32.0" prefWidth="94.0" style="-fx-background-color: transparent;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <VBox layoutY="70.0" prefHeight="566.0" prefWidth="154.0" style="-fx-background-color: white;" AnchorPane.topAnchor="70.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@research.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" top="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <TextField fx:id="tfSearch" prefHeight="25.0" prefWidth="131.0" promptText="   검색">
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="2.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <TreeView fx:id="tree" prefHeight="663.0" prefWidth="154.0">
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </TreeView>
+         </children>
+      </VBox>
+      <ImageView fitHeight="76.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lc.JPG" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="pane" layoutX="157.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="802.0" style="-fx-background-color: #C0C0A6;">
+         <children>
+            <ImageView fitHeight="606.0" fitWidth="802.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../bin/classRoom/main/controller/classvivew.JPG" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="129.0" layoutY="130.0" prefHeight="111.0" prefWidth="535.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="225.0" minWidth="0.0" prefWidth="57.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="402.0" minWidth="8.0" prefWidth="162.0" />
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="98.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="182.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="42.0" minHeight="2.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="40.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="50.0" text="수강자ID" />
+                  <Label text="수강자명" GridPane.rowIndex="1" />
+                  <Label text="수강자연락처" GridPane.columnIndex="2" />
+                  <Label text="수강자E-Mail" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="보유포인트" GridPane.rowIndex="2" />
+                  <Label fx:id="mem_id" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="mem_em" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label fx:id="mem_ph" text="Label" GridPane.columnIndex="3" />
+                  <Label fx:id="mem_pt" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="mem_nm" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <effect>
+                  <Bloom threshold="0.43" />
+               </effect>
+            </GridPane>
+            <TableView fx:id="tableview" layoutX="53.0" layoutY="294.0" prefHeight="249.0" prefWidth="698.0">
+              <columns>
+                <TableColumn fx:id="col1" prefWidth="75.0" style="-fx-alignment: center;" text="과목명" />
+                <TableColumn fx:id="col2" prefWidth="94.0" style="-fx-alignment: center;" text="강의내용" />
+                  <TableColumn fx:id="col3" prefWidth="342.0" style="-fx-alignment: center;" text="학습시간" />
+                  <TableColumn fx:id="col4" prefWidth="98.0" style="-fx-alignment: center;" text="예정시간" />
+                  <TableColumn fx:id="col5" prefWidth="88.0" text="출결상황" />
+              </columns>
+            </TableView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <Separator layoutX="154.0" orientation="VERTICAL" prefHeight="644.0" prefWidth="3.0" />
+   </children>
+</AnchorPane>

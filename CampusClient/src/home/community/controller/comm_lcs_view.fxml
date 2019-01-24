@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  사용자가 자격증 게시판의 글중 하나를 선택해 볼때. crud불가능.-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.Comm_lcs_viewController">
+   <children>
+      <TextField fx:id="tfTitle" editable="false" layoutX="81.0" layoutY="19.0" prefHeight="23.0" prefWidth="484.0" />
+      <Label layoutX="26.0" layoutY="21.0" text="제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taContents" editable="false" layoutX="24.0" layoutY="59.0" prefHeight="355.0" prefWidth="552.0" />
+      <Button fx:id="btnExit" layoutX="494.0" layoutY="428.0" mnemonicParsing="false" onAction="#showList" prefHeight="31.0" prefWidth="82.0" text="목록으로">
+         <font>
+            <Font name="THEJung150" size="11.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

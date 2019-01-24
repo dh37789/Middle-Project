@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 공지사항 리스트를 볼때-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="pain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="801.0" spacing="5.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.classroom_manage.comm.controller.AdmClassroom_boardController">
+   <children>
+      <AnchorPane prefHeight="101.0" prefWidth="801.0">
+         <children>
+            <ImageView fitHeight="124.0" fitWidth="801.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@555.jpg" />
+               </image>
+            </ImageView>
+            <VBox layoutX="686.0" layoutY="7.0" prefHeight="92.0" prefWidth="99.0">
+               <children>
+                  <Button fx:id="btnNotice" mnemonicParsing="false" onAction="#notice" prefHeight="23.0" prefWidth="87.0" style="-fx-background-color: transparent;" />
+                  <Button fx:id="btnSubject" mnemonicParsing="false" onAction="#subject" prefHeight="23.0" prefWidth="87.0" style="-fx-background-color: transparent;">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnQna" mnemonicParsing="false" onAction="#qna" prefHeight="23.0" prefWidth="87.0" style="-fx-background-color: transparent;">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="brnPost" mnemonicParsing="false" onAction="#post" prefHeight="23.0" prefWidth="87.0" style="-fx-background-color: transparent;">
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableview" prefHeight="388.0" prefWidth="801.0" tableMenuButtonVisible="true">
+         <columns>
+            <TableColumn fx:id="colno" prefWidth="75.0" text="No" />
+            <TableColumn fx:id="col_writer" prefWidth="75.0" text="작성자" />
+            <TableColumn fx:id="coltitle" prefWidth="279.0" text="글제목" />
+            <TableColumn fx:id="colfile" prefWidth="51.0" text="파일" />
+            <TableColumn fx:id="colcount" prefWidth="85.0" text="조회" />
+            <TableColumn fx:id="coldate" prefWidth="177.0" text="등록일" />
+            <TableColumn fx:id="remove" prefWidth="39.0" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="794.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@research.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="tfsearch" prefHeight="23.0" prefWidth="161.0" promptText="\@제목을검색하세요">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+            </TextField>
+            <HBox fx:id="writebox" alignment="CENTER" prefHeight="15.0" prefWidth="72.0" spacing="2.0" style="-fx-border-color: lightgray; -fx-border-radius: 8;">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../classRoom/board/controller/edit.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="15.0" prefWidth="46.0" text="글쓰기">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets left="500.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

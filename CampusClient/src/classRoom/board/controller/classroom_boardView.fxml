@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 공지사항을 자세히 볼때-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="794.0" style="-fx-background-image: url(edit.png);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classRoom.board.controller.classroom_boardViewController">
+   <children>
+      <ImageView fitHeight="626.0" fitWidth="806.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@qw.JPG" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="155.0" layoutY="65.0" prefHeight="109.0" prefWidth="533.0" style="-fx-background-color: white; -fx-opacity: 0.5; -fx-background-radius: 20;" />
+      <TextField fx:id="tftitle" editable="false" layoutX="268.0" layoutY="75.0" prefHeight="23.0" prefWidth="338.0" />
+      <TextField fx:id="tfwriter" editable="false" layoutX="268.0" layoutY="112.0" prefHeight="23.0" prefWidth="88.0" />
+      <Label layoutX="209.0" layoutY="78.0" text="*글제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="114.0" text="*등록자">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="tarea" editable="false" layoutX="30.0" layoutY="209.0" prefHeight="327.0" prefWidth="739.0" />
+      <Button fx:id="backbutton" layoutX="28.0" layoutY="551.0" mnemonicParsing="false" onAction="#backbuttonClick" prefWidth="50.0" text="목록" />
+      <Label layoutX="397.0" layoutY="116.0" text="*작성일">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfdate" editable="false" layoutX="462.0" layoutY="114.0" prefHeight="23.0" prefWidth="143.0" />
+      <HBox fx:id="editbox" layoutX="662.0" layoutY="553.0" prefHeight="23.0" prefWidth="49.0">
+         <children>
+            <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@edit2.png" />
+               </image>
+            </ImageView>
+            <Label text="수정">
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="deletebox" layoutX="711.0" layoutY="553.0" prefHeight="23.0" prefWidth="49.0">
+         <children>
+            <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@remove.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="20.0" prefWidth="27.0" text="삭제" />
+         </children>
+      </HBox>
+      <Label layoutX="216.0" layoutY="150.0" text="첨부파일" />
+      <HBox fx:id="filebox" layoutX="277.0" layoutY="146.0" prefHeight="23.0" prefWidth="284.0" spacing="10.0">
+         <children>
+            <Label fx:id="tffile" prefHeight="15.0" text="Label" />
+         </children>
+         <padding>
+            <Insets top="4.0" />
+         </padding>
+      </HBox>
+      <Separator layoutY="188.0" prefHeight="3.0" prefWidth="794.0" />
+   </children>
+</AnchorPane>

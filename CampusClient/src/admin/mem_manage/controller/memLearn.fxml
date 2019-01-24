@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.mem_manage.controller.MemLearnController">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="650.0">
+         <children>
+            <Button fx:id="btnCancel" layoutX="572.0" layoutY="463.0" mnemonicParsing="false" onAction="#cancel" prefHeight="19.0" prefWidth="64.0" text="돌아가기" />
+            <TableView fx:id="tableVD" layoutX="12.0" layoutY="40.0" prefHeight="190.0" prefWidth="380.0">
+              <columns>
+                <TableColumn fx:id="vColId" prefWidth="59.0" text="단원ID" />
+                <TableColumn fx:id="vColNM" prefWidth="83.0" text="단원명" />
+                  <TableColumn fx:id="vColCon" prefWidth="149.0" text="강의명" />
+                  <TableColumn fx:id="vColStatus" prefWidth="87.0" text="학습현황" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tableQuiz" layoutX="13.0" layoutY="269.0" prefHeight="183.0" prefWidth="380.0">
+               <columns>
+                  <TableColumn fx:id="colQId" prefWidth="54.0" text="문제ID" />
+                  <TableColumn fx:id="colQTi" prefWidth="262.0" text="문제 이름" />
+                  <TableColumn fx:id="colQStatus" prefWidth="63.0" text="학습현황" />
+               </columns>
+            </TableView>
+            <Label layoutX="12.0" layoutY="13.0" text="학생 강의 시청 현황">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="241.0" text="학생 문제 풀이 현황">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="vdPie" layoutX="393.0" layoutY="25.0" prefHeight="208.0" prefWidth="257.0" />
+            <PieChart fx:id="quizPie" layoutX="392.0" layoutY="254.0" prefHeight="208.0" prefWidth="257.0" />
+            <Label fx:id="lbvdName" alignment="CENTER" contentDisplay="CENTER" layoutX="406.0" layoutY="17.0" prefHeight="20.0" prefWidth="229.0" text="null">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbQuiz" alignment="CENTER" contentDisplay="CENTER" layoutX="407.0" layoutY="239.0" prefHeight="20.0" prefWidth="229.0" text="null">
+               <font>
+                  <Font name="Arial" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

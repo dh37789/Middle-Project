@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="pane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.main.controller.AdminViewController">
+   <children>
+      <ImageView fitHeight="64.0" fitWidth="800.0" layoutX="198.0" layoutY="411.0" onMouseClicked="#ddit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ddit2.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="397.0" fitWidth="800.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ddit1.JPG" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+	#tb1{
+		width: 700px;
+		height: 70px;
+	}
+	#tb2{
+		width: 700px;
+		height: 130px;
+	}
+ 	#tb3{
+		width: 700px;
+		height: 300px;
+	} 
+	.cen{
+		text-align: center;
+		background-color: #e0e0eb;
+	}
+
+	#img1{
+		width:150px;
+		height:150px;
+	}
+	#timg{
+		text-align: center;
+		width:120px;
+		height:40px;
+	}
+	  .td3{
+		height:5px;
+		background-color: #e0e0eb;
+	}
+	  .ta3{
+	  	height:90px;
+	  	width:30px;
+	  }
+	img{
+	
+	}  
+	  

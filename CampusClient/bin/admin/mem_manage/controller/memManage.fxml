@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="paneA" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.mem_manage.controller.MemManageController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@memset.JPG" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="150.0">
+         <children>
+            <Button fx:id="btnApply" mnemonicParsing="false" onAction="#apply" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+               <VBox.margin>
+                  <Insets top="35.0" />
+               </VBox.margin></Button>
+            <Button fx:id="memInfo" mnemonicParsing="false" onAction="#info" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin></Button>
+            <Button fx:id="btnBlack" mnemonicParsing="false" onAction="#black" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin></Button>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+      <Pane fx:id="pane" layoutX="150.0" prefHeight="500.0" prefWidth="650.0" />
+   </children>
+</AnchorPane>

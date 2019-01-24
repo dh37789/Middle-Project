@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="freeboard">
+	<typeAlias alias="freeboardVO" type="vo.Free_boardVO"/>
+	<typeAlias alias="sikdanVO" type="vo.Meal_chartVO"/>
+	
+		<select id = "getFreeBoard" resultClass = "freeboardVO">
+			select * from free_board
+		</select>
+
+		<insert id = "FreeBoardWrite" parameterClass = "freeboardVO">
+	  		insert into free_board (frbd_id, frbd_ti, frbd_dt, frbd_wrr, frbd_con, frbd_inum, frbd_memid)
+	  		values('F'||to_char(frbd_seq.nextval), #frbd_ti#, (to_char(sysdate,'yyyy')||'년 '||to_char(sysdate,'mm')||'월 '||to_char(sysdate,'dd')||'일 '||'('||to_char(sysdate,'dy')||')'), #frbd_wrr#, #frbd_con#, #frbd_iNum#, #frbd_memId#)
+	    </insert>
+	    
+	    <update id = "FreeBoardUpdate" parameterClass = "freeboardVO">
+	    	update free_board 
+	    	set frbd_ti = #frbd_ti#, frbd_con = #frbd_con#, frbd_dt = sysdate
+	     	where frbd_id = #frbd_id# 
+	    </update>
+	    
+	    <delete id = "FreeBoardDelete" parameterClass = "String">
+	    	delete from free_board
+	    	where frbd_id = #frbd_id#
+	    </delete>
+	    
+	    <update id = "iNum" parameterClass = "String">
+	    	update free_board
+	    	set frbd_inum = frbd_iNum + 1
+	    	where frbd_id = #frbd_id#
+	    </update>
+	    
+	    <select id="FreeBoardSearch" resultClass="freeboardVO" parameterClass="String">
+			select * from free_board where frbd_ti like #title#
+		</select>
+		
+		<select id = "getSikdan" resultClass = "sikdanVO" parameterClass = "String">
+			select mlc_id, NVL(mlc_ml,' ') as mlc_ml from meal_chart where mlc_id like #mlc_id#
+		</select>
+		
+		<select id = "chkSikdan" parameterClass = "String" resultClass="int">
+			select count(*) from meal_chart
+			where mlc_id = #mlc_id#
+		</select>
+		
+		<insert id = "addSikdan" parameterClass = "sikdanVO">
+			insert into meal_chart(mlc_id, mlc_dt, mlc_ml, mlc_admid)
+			values (#mlc_id#, #mlc_dt#, #mlc_ml#, #mlc_admid#)
+		</insert>
+		
+		<update id = "updateSikdan" parameterClass = "sikdanVO">
+			update meal_chart
+			set mlc_ml = #mlc_ml#
+			where mlc_id = #mlc_id#
+		</update>
+		
+</sqlMap>

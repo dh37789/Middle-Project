@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="postscript">
+	<typeAlias alias="PostVO" type="vo.Post_boardVO" />
+	
+	<select id="getBoardList" resultClass="PostVO">
+		select * from pop_board
+	</select>
+	
+	<select id="subBoard" parameterClass="String" resultClass="PostVO">
+		select * from pop_board where popbd_sub = #popbd_sub# order by to_number(substr(popbd_id, 3)) DESC
+	</select>
+	
+	<select id="searchBoard" parameterClass="Map" resultClass="PostVO">
+		select * from pop_board where $colStr$ like #SearchStr# AND popbd_sub like #sub# order by to_number(substr(popbd_id, 3)) DESC
+	</select>
+	
+	<insert id="insertPopBoard" parameterClass="PostVO">
+		insert into pop_board values (
+			'PS'||ps_seq.NEXTVAL, #popbd_ti#, #popbd_wrr#,
+			 sysdate, #popbd_con#, 0, #popbd_memId#, #popbd_sub#)
+	</insert>
+	
+	<delete id="deleteBoard" parameterClass="String">
+		delete pop_board where popbd_id = #popbd_id#
+	</delete>
+	
+	<update id="updateBoard" parameterClass="PostVO">
+		update pop_board set popbd_ti = #popbd_ti#, popbd_con = #popbd_con#, 
+			   popbd_dt = sysdate, popbd_sub = #popbd_sub# where popbd_id = #popbd_id#
+	</update>
+		
+</sqlMap>

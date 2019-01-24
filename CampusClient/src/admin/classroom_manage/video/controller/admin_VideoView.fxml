@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="606.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.classroom_manage.video.controller.admin_classVideoViewController">
+   <children>
+      <ImageView fitHeight="606.0" fitWidth="801.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@setlec.JPG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="vd_id" editable="false" layoutX="192.0" layoutY="148.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_nm" editable="false" layoutX="192.0" layoutY="197.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_pltm" editable="false" layoutX="192.0" layoutY="249.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_flrt" editable="false" layoutX="192.0" layoutY="299.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_unid" editable="false" layoutX="192.0" layoutY="350.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="vd_unnm" editable="false" layoutX="192.0" layoutY="399.0" prefHeight="23.0" prefWidth="108.0" style="-fx-background-color: transparent;" />
+      <Label layoutX="496.0" layoutY="210.0" prefHeight="15.0" prefWidth="269.0" text="초급자바                           un001" />
+      <Label layoutX="496.0" layoutY="257.0" prefHeight="15.0" prefWidth="269.0" text="고급자바                           un002" />
+      <Label layoutX="500.0" layoutY="304.0" prefHeight="15.0" prefWidth="269.0" text="jquery                             un003" />
+      <Label layoutX="508.0" layoutY="350.0" prefHeight="15.0" prefWidth="269.0" text="jsp                                un004" />
+      <Label layoutX="488.0" layoutY="395.0" prefHeight="15.0" prefWidth="269.0" text="데이터베이스                       un005" />
+      <HBox fx:id="editbox" layoutX="649.0" layoutY="544.0" prefHeight="23.0" prefWidth="49.0" />
+      <HBox fx:id="deletebox" layoutX="698.0" layoutY="543.0" prefHeight="23.0" prefWidth="49.0">
+         <children>
+            <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../classRoom/board/controller/remove.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="20.0" prefWidth="27.0" text="삭제" />
+         </children>
+      </HBox>
+      <HBox fx:id="exitbox" alignment="CENTER_RIGHT" layoutX="702.0" layoutY="20.0" prefHeight="25.0" prefWidth="61.0" spacing="5.0">
+         <children>
+            <ImageView fitHeight="25.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
+            <Label textFill="#ee2917">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

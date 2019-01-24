@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.HomeCommunityController">
+   <children>
+      <VBox layoutY="-2.0" prefHeight="505.0" prefWidth="160.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnFrBoard" mnemonicParsing="false" onAction="#freeBoard" prefHeight="40.0" prefWidth="160.0" text="자유게시판관리">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnLicenseInfo" mnemonicParsing="false" onAction="#licenseInfo" prefHeight="40.0" prefWidth="160.0" text="자격증 일정 및 정보 관리">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnLicenseTip" mnemonicParsing="false" onAction="#licenseTip" prefHeight="40.0" prefWidth="160.0" text="자격증 Tip 게시판 관리">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnMeal" mnemonicParsing="false" onAction="#meal" prefHeight="40.0" prefWidth="160.0" text="대전도시락 식단표">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="community_window" layoutX="160.0" prefHeight="500.0" prefWidth="640.0">
+         <children>
+            <Separator layoutX="-3.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="0.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

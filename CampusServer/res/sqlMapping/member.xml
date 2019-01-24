@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="member">
+	<typeAlias alias="memberVO" type="vo.MemberVO" />
+	
+	<insert id="insertMember" parameterClass="memberVO">
+		insert into member(mem_id, mem_nm, mem_ps, mem_em, mem_ph, mem_aDay, mem_irt, mem_pt, mem_access)
+		values (#mem_id#, #mem_nm#, #mem_ps#, #mem_em#, #mem_ph#, #mem_aDay#, #mem_irt#, #mem_pt#, #mem_access#)
+	</insert>
+	
+	<select id="getMemberCount" parameterClass="String" resultClass="int">
+	 	select count(*) from member
+	 	where mem_id = #mem_id#
+	 </select>
+	 
+	 <select id="getLogin" parameterClass="map" resultClass="memberVO">
+	 	select * from member
+	 	where mem_id = #mem_id# and mem_ps = #mem_ps# 
+	 </select>
+	 
+	 <select id="getIdSearch" parameterClass="map" resultClass="memberVO">
+	 	select * from member
+	 	where mem_nm = #mem_nm# and mem_ph = #mem_ph# and mem_em = #mem_em#
+	 </select>
+	 
+	 <update id="getPass" parameterClass="map">
+	 	update member set mem_ps = #mem_ps#
+	 	where mem_id = #mem_id# and mem_ph = #mem_ph# and mem_em = #mem_em#
+	 </update>
+	 <update id="infoUpdate" parameterClass="memberVO">
+	 	update member 
+	 	set mem_em = #mem_em#, mem_pt=#mem_pt# ,mem_ph = #mem_ph#, mem_nm = #mem_nm#, mem_irt = #mem_irt#
+	 	where mem_id = #mem_id#
+	 </update>
+	 <update id="passUpdate" parameterClass="memberVO">
+	 	update member 
+	 	set mem_ps=#mem_ps#
+	 	where mem_id = #mem_id#
+	 </update>
+	 <delete id="outMember" parameterClass="String">
+	 	delete from member where mem_id = #mem_id#
+	 </delete>
+	 <select id="selectPt" parameterClass="string" resultClass="memberVO">
+	 	select * from member
+	 	where mem_id = #mem_id#
+	 </select>
+	 
+	 <update id="updatePt" parameterClass="memberVO">
+	 	update member set mem_pt = #mem_pt#
+	 	where mem_id = #mem_id#
+	 </update>
+	 <select id="noAccessList" resultClass="memberVO">
+	 <![CDATA[
+	 	select * from member
+	 	where mem_access = 0
+	 ]]>
+	 </select>
+	 <update id="accessOK" parameterClass="String">
+	 	update member set mem_access = 1 where mem_id = #mem_id#
+	 </update>
+	 
+	 <select id="getBlackList" resultClass="memberVO">
+	 <![CDATA[
+	 	select * from member
+	 	where mem_access <> 0
+	 ]]>
+	 </select>
+	 <update id="addBlack" parameterClass="String">
+	 	update member set mem_access = 2 where mem_id = #mem_id#
+	 </update>
+	 <update id="subBlack" parameterClass="String">
+	 	update member set mem_access = 1 where mem_id = #mem_id#
+	 </update>
+	 <select id="getAllMember" resultClass="memberVO">
+	 	select * from member
+	 </select>
+</sqlMap>

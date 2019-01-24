@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qnaBoard">
+	<typeAlias alias="qnaBoardVO" type="vo.Qna_boardVO"/>
+	<select id="getQnaList" resultClass="qnaBoardVO">
+		select * from qna_board order by to_number(substr(qabd_id, 2))
+	</select>
+	<insert id="insertBoard" parameterClass="qnaBoardVO">
+		insert into qna_board(qabd_id, qabd_ti, qabd_dt, qabd_con, qabd_ps, qabd_wrr, qabd_memid) 
+		values('Q'||qna_seq.nextval, #qabd_ti#, SYSDATE, #qabd_con#, #qabd_ps#, #qabd_wrr#, #qabd_memid#)
+	</insert>
+	<delete id="deleteBoard" parameterClass="String">
+		delete qna_board where qabd_id = 'Q'||#qabd_id#
+	</delete>
+	<update id="updateBoard" parameterClass="qnaBoardVO">
+		update qna_board 
+		set qabd_ti = #qabd_ti#, qabd_con= #qabd_con#, qabd_dt = sysdate 
+		where qabd_id = 'Q'||#qabd_id#
+	</update>
+	<select id="searchQna" parameterClass="map" resultClass="qnaBoardVO">
+		select * from qna_board where $colStr$ like #SearchStr# order by to_number(substr(qabd_id, 2))
+	</select>
+</sqlMap>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+   PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="video">
+   <typeAlias alias="videoVO" type="vo.VideoVO" />
+   <typeAlias alias="mem_videoVO" type="vo.Member_videoVO" />
+   <typeAlias alias="VideoJoinVO" type="vo.VideoJoinVO" />
+
+
+   <select id="selectVideo" resultClass="videoVO"
+      parameterClass="string">
+      select * from video where vd_nm =#vd_name#
+   </select>
+
+   <delete id="deleteVideo" parameterClass="String">
+      delete from
+      video where
+      vd_id = #vd_id#
+   </delete>
+
+   <select id="selectTime" resultClass="mem_videoVO"
+      parameterClass="map">
+      select * from member_video where MEM_VD_MEMID =
+      #mem_id# and MEM_VD_VDID= #vd_id#
+   </select>
+
+   <insert id="insertVideo2" parameterClass="videoVO">
+      insert into video
+      values('v00'||video_seq.nextVal,#vd_nm#,#vd_pltm#,#vd_flrt#,#vd_unId#,#vd_admId#)
+   </insert>
+
+   <insert id="insertVideo" parameterClass="mem_videoVO">
+      insert into member_video
+      (mem_vd_memId , mem_vd_vdId,mem_vd_pltm,mem_vd_ean)
+      values(#mem_vd_memId#,#mem_vd_vdId#,0,0)
+   </insert>
+
+   <update id="updateTime" parameterClass="map">
+      update member_video set
+      mem_vd_pltm = $vd_pltm$ where mem_vd_memid = #mem_id# and mem_vd_vdid=
+      #vd_id#
+   </update>
+
+   <update id="complete" parameterClass="mem_videoVO">
+      update member_video set
+      mem_vd_ean = 1 where mem_vd_memid = #mem_vd_memId# and mem_vd_vdid=
+      #mem_vd_vdId#
+   </update>
+   
+   <select id="getJoinVideo" resultClass="vo.VideoJoinVO" parameterClass="String">
+   select un_id,un_nm, NVL(vd_nm,'동영상 없음') as con_con, NVL(mem_vd_ean,0) as mem_vd_ean
+   from member LEFT OUTER JOIN member_video ON(mem_id = mem_vd_memid and mem_vd_memid = #mem_id#)
+            RIGHT OUTER JOIN video ON(vd_id = mem_vd_vdid)
+            RIGHT OUTER JOIN unit ON(un_id = vd_unid)
+            order by un_id asc
+   
+   </select>
+   <select id="getAllVideo"  resultClass="videoVO" >
+      select * from video 
+   </select>
+   
+   <select id="selectVideoId"  resultClass="videoVO" parameterClass="String" >
+      select * from video where vd_id = #vd_id# 
+   </select>
+   <select id="vdCount" resultClass="int">
+   	   select count(*)
+   from video
+   </select>
+   <select id="vdEanCount" parameterClass="String" resultClass="int">
+   	 select count(*)
+   from MEMBER_VIDEO
+   where MEM_VD_MEMID = #mem_id#
+   and mem_vd_ean = 1
+   </select>
+
+
+	<update id="updatept" parameterClass="String" >
+		update member set mem_pt = mem_pt+20 where mem_id =#mem_id#
+	</update>	
+</sqlMap>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="licenseBoard">
+
+<!-- 자격증 정보 게시판 -->
+
+	 <typeAlias alias = "licenseBoard" type="vo.LcsVO"/>
+	 
+	 <select id="getLicenseBoard" resultClass="licenseBoard">
+	 	select * from Lcs
+	 </select>
+	 
+	 <insert id="insertLicense" parameterClass="licenseBoard">
+	 	insert into Lcs (lcs_id, lcs_nm, lcs_tdt ,lcs_con ,lcs_admid)
+	 	values ('L'||to_char(lcs_seq.nextVal), #lcs_nm#, 
+	 	(to_char(sysdate,'yyyy')||'년 '
+		||to_char(sysdate,'mm')||'월 '
+		||to_char(sysdate,'dd')||'일 '
+		||'('||to_char(sysdate,'dy')||')'), 
+		#lcs_con#, #lcs_admId#)
+	 </insert>
+	 
+	 <delete id="deleteLicense" parameterClass="String">
+	 	delete from Lcs where lcs_id = #lcs_id# 
+	 </delete>
+	 
+	 <update id="updateLicense" parameterClass="licenseBoard">
+	 	update Lcs
+	 	set lcs_nm   = #lcs_nm#,
+	 		lcs_con  = #lcs_con#,
+	 		lcs_tdt  = 
+	 		(to_char(sysdate,'yyyy')||'년 '
+			||to_char(sysdate,'mm')||'월 '
+			||to_char(sysdate,'dd')||'일 '
+			||'('||to_char(sysdate,'dy')||')')
+	 	where lcs_id = #lcs_id#
+	 </update>
+	 
+	 <select id="lcsSearch" resultClass="licenseBoard" parameterClass="String">
+			select * from lcs where lcs_nm like #lcs_nm#
+	</select>
+	 
+	 
+	 
+<!-- 자격증 Tip 게시판 -->
+
+	<typeAlias alias = "TipBoard" type="vo.Tip_boardVO"/>
+	<select id="getTipBoard" resultClass="TipBoard">
+		select * from tip_board
+	</select>
+	
+	<insert id="insertTip" parameterClass="TipBoard">
+		insert into tip_board (tbd_id, tbd_ti, tbd_wrr, tbd_dt, tbd_con, tbd_iNum, tbd_memID)
+		values ('T'||to_char(tip_seq.nextVal), #tbd_ti#, #tbd_wrr#, 
+		(to_char(sysdate,'yyyy')||'년 '
+		||to_char(sysdate,'mm')||'월 '
+		||to_char(sysdate,'dd')||'일 '
+		||'('||to_char(sysdate,'dy')||')'), 
+		#tbd_con#, #tbd_iNum#, #tbd_memID#)
+	</insert>
+	
+	<delete id="deleteTip" parameterClass="String">
+		delete from tip_board where tbd_id = #tbd_id#
+	</delete>
+	
+	<update id="updateTip" parameterClass="TipBoard">
+		update tip_board
+		set tbd_ti  = #tbd_ti#,
+			tbd_con = #tbd_con#,
+			tbd_dt  = 
+			(to_char(sysdate,'yyyy')||'년 '
+			||to_char(sysdate,'mm')||'월 '
+			||to_char(sysdate,'dd')||'일 '
+			||'('||to_char(sysdate,'dy')||')')
+		where tbd_id = #tbd_id#
+	</update>
+	
+	<select id="tipSearch" parameterClass="String" resultClass="TipBoard">
+		select * from tip_board where tbd_ti like #tbd_ti#
+	</select>
+	
+</sqlMap>

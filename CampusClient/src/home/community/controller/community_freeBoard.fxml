@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 자유게시판 목록 볼때 -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.FreeBoardController">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="label" prefHeight="36.0" prefWidth="198.0" text="자유게시판" textFill="#3c3c3c">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutY="50.0" prefHeight="0.0" prefWidth="600.0" />
+      <TableView fx:id="frbd" layoutX="10.0" layoutY="60.0" onMouseClicked="#frbd_view" prefHeight="360.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="frbd_id" prefWidth="44.0" text="No." />
+            <TableColumn fx:id="frbd_ti" prefWidth="262.0" text="제목" />
+            <TableColumn fx:id="frbd_wrr" minWidth="0.0" prefWidth="78.0" text="작성자" />
+            <TableColumn fx:id="frbd_dt" minWidth="0.0" prefWidth="134.0" text="작성일" />
+            <TableColumn fx:id="frbd_iNum" prefWidth="61.0" text="조회수" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="10.0" layoutY="428.0" prefHeight="40.0" prefWidth="580.0" style="-fx-background-color: transparent;">
+         <children>
+            <AnchorPane prefHeight="40.0" prefWidth="580.0" style="-fx-background-color: white; -fx-opacity: 0.6; -fx-background-radius: 10;" />
+            <TextField fx:id="tf_search" layoutX="35.0" layoutY="9.0" onKeyReleased="#search" prefHeight="23.0" prefWidth="137.0" promptText="검색어를 입력해주세요" style="-fx-opacity: 1.0;" />
+            <Pagination fx:id="page" layoutX="190.0" layoutY="-1.0" prefHeight="23.0" prefWidth="200.0" />
+            <Button fx:id="btn_add" layoutX="509.0" layoutY="7.0" mnemonicParsing="false" onAction="#frbd_write" prefHeight="23.0" prefWidth="50.0" text="등록" />
+            <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="3.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;">
+               <image>
+                  <Image url="@research.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

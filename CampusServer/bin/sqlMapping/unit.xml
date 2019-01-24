@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="unit">
+	<typeAlias alias="unitVO" type="vo.UnitVO" />
+	<typeAlias alias="joinVO" type="vo.joinVO" />
+
+	<select id="selectUnit" resultClass="unitVO">
+		select * from unit
+	</select>
+
+	<select id="join" parameterClass="String" resultClass="joinVO">
+		<!-- select un_nm , vd_nm, mem_vd_pltm ,vd_pltm, mem_vd_ean
+		from unit ,member_video , video , member
+		where mem_id=mem_vd_memid and vd_id = mem_vd_vdid and vd_unid = un_id
+		and mem_id=#mem_id# order by un_id -->
+		
+		select un_nm, nvl(vd_nm,'동영상없음') as vd_nm, nvl(mem_vd_pltm,0) as mem_vd_pltm ,nvl(vd_pltm,0) as vd_pltm, nvl(mem_vd_ean,0)as mem_vd_ean
+from member LEFT OUTER JOIN member_video ON(mem_id = mem_vd_memid and mem_vd_memid = #mem_id#)
+            RIGHT OUTER JOIN video ON(vd_id = mem_vd_vdid)
+            RIGHT OUTER JOIN unit ON(un_id = vd_unid)
+	</select>
+
+
+</sqlMap>
+

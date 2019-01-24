@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="question">
+	<typeAlias alias="questionVO" type="vo.Practice_questionVO" />
+	<typeAlias alias="quizJoinVO" type="vo.QuizJoinVO"/>
+	<!--한 문제를 가져오는 SQL문 -->
+	<select id="getOneQ" resultClass="questionVO" parameterClass="String">
+		select * from PRATICE_QUESTION where pqt_id = #pqt_id#
+	</select>
+	<select id="getAllQ" resultClass="questionVO" parameterClass="String">
+		SELECT
+		 PRATICE_QUESTION.PQT_ADMID,
+		 PRATICE_QUESTION.PQT_AW,
+		 PRATICE_QUESTION.PQT_CON,
+		 PRATICE_QUESTION.PQT_CT,
+		 PRATICE_QUESTION.PQT_ID,
+		 PRATICE_QUESTION.PQT_DIFF,
+		 PRATICE_QUESTION.PQT_TCT,
+		 PRATICE_QUESTION.PQT_TI,
+		 NVL(MEMBER_QUESTION.MEM_PQT_EAN,0) as mem_pqt_ean
+		FROM PRATICE_QUESTION LEFT OUTER JOIN MEMBER_QUESTION ON(PQT_ID = MEM_PQT_PQTID and  mem_pqt_memid = #mem_id#)
+		order by TO_NUMBER(substr(pqt_id, 4))
+	</select>
+	<select id="getAll" resultClass="questionVO">
+		SELECT
+   		 *
+		FROM PRATICE_QUESTION
+		order by TO_NUMBER(substr(pqt_id, 4))
+	</select>
+	<update id="increaseCT" parameterClass="String">
+		update PRATICE_QUESTION set pqt_ct = pqt_ct+1 where pqt_id = #pqt_id#
+	</update>
+	<update id="increaseHitCT" parameterClass="String">
+		update PRATICE_QUESTION set pqt_tct = pqt_tct+1 where pqt_id = #pqt_id#
+	</update>
+	<select id="getQuizJoin" resultClass="quizJoinVO">
+		select PQT_ID,
+       pqt_ti,
+       NVL(mem_pqt_ean,0) as ean
+from member LEFT OUTER JOIN MEMBER_QUESTION ON(mem_id = mem_pqt_memid and mem_pqt_memid = #mem_id#)
+            RIGHT OUTER JOIN PRATICE_QUESTION ON(mem_pqt_pqtid = pqt_id)
+            order by TO_NUMBER(substr(pqt_id, 4))
+	</select>
+	<insert id="addQuiz" parameterClass="questionVO">
+		insert into pratice_question values(#pqt_id#,#pqt_ti#,#pqt_aw#,#pqt_tct#,#pqt_admid#,#pqt_con#,#pqt_ct#,#pqt_diff#)
+	</insert>
+	<delete id="deleteQuiz" parameterClass="String">
+		delete from pratice_question where pqt_id = #pqt_id#
+	</delete>
+	<update id="updateQuiz" parameterClass="questionVO">
+		update PRATICE_QUESTION set pqt_ti = #pqt_ti#, pqt_con = #pqt_con#, pqt_aw = #pqt_aw#, pqt_diff = #pqt_diff#  where pqt_id = #pqt_id#
+	</update>
+	<select id="eanQuiz" parameterClass="String" resultClass="int">
+	select
+       count(*)
+   from member_question
+   where mem_pqt_memid = #mem_id#
+   and mem_pqt_ean = 1
+   </select>
+   <select id="quizSize" resultClass="int">
+   	select
+       count(*)
+   from pratice_question
+   </select>
+</sqlMap>
+

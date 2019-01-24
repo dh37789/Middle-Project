@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.mem_manage.controller.MemInfoListController">
+   <children>
+      <ListView fx:id="memList" layoutX="28.0" layoutY="41.0" onMouseClicked="#listClick" prefHeight="435.0" prefWidth="595.0" />
+      <Label layoutX="27.0" layoutY="5.0" text="회원 정보 조회하기">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

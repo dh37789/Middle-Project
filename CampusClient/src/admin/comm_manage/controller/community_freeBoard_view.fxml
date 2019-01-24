@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 게시판에서 게시글 내용을 볼때-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.FreeBoard_ViewController">
+   <children>
+      <Separator layoutY="58.0" prefHeight="0.0" prefWidth="600.0" />
+      <HBox layoutX="-2.0" layoutY="3.0" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label text="자유게시판">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <TextField fx:id="frbd_ti" editable="false" layoutX="63.0" layoutY="73.0" prefHeight="23.0" prefWidth="335.0" />
+      <TextField fx:id="frbd_dt" editable="false" layoutX="458.0" layoutY="73.0" prefHeight="23.0" prefWidth="119.0" />
+      <Label layoutX="25.0" layoutY="74.0" text="제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="412.0" layoutY="74.0" text="작성일">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="frbd_con" editable="false" layoutX="25.0" layoutY="138.0" prefHeight="210.0" prefWidth="552.0" />
+      <Button fx:id="btn_exit" layoutX="506.0" layoutY="457.0" mnemonicParsing="false" onAction="#exit" prefWidth="50.0" style="-fx-border-color: orange; -fx-border-radius: 30; -fx-background-color: transparent; -fx-border-width: 3px;" text="목록" />
+      <Button fx:id="btn_remove" layoutX="444.0" layoutY="457.0" mnemonicParsing="false" onAction="#remove" prefHeight="23.0" prefWidth="50.0" style="-fx-background-color: transparent; -fx-border-radius: 30; -fx-border-color: orange; -fx-border-width: 3px;" text="삭제" />
+      <Label layoutX="412.0" layoutY="111.0" text="작성자">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="frbd_wrr" editable="false" layoutX="458.0" layoutY="108.0" prefHeight="23.0" prefWidth="119.0" />
+      <ScrollPane fx:id="paneReply" cacheHint="SCALE_AND_ROTATE" layoutX="25.0" layoutY="361.0" prefHeight="61.0" prefWidth="552.0">
+         <content>
+            <VBox fx:id="paneV" prefHeight="28.0" prefWidth="550.0" />
+         </content>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ScrollPane>
+      <HBox alignment="CENTER" layoutY="425.0" prefHeight="32.0" prefWidth="552.0" spacing="10.0" />
+   </children>
+</AnchorPane>

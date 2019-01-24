@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  사용자가 자격증정보 게시판을 조회. crud불가능-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.Comm_lcsController">
+   <children>
+      <HBox prefHeight="23.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="label" text="자격증 정보" textFill="#3c3c3c">
+               <font>
+                  <Font name="THEJung150" size="33.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutY="50.0" prefHeight="0.0" prefWidth="600.0" />
+      <TableView fx:id="tableLicense" layoutX="10.0" layoutY="60.0" onMouseClicked="#showContents" prefHeight="360.0" prefWidth="580.0" style="-fx-focus-traversable: true;">
+         <columns>
+            <TableColumn fx:id="lcs_id" prefWidth="54.0" text="No." />
+            <TableColumn fx:id="tcTitle" prefWidth="312.0" text="제목" />
+            <TableColumn fx:id="lcs_admid" prefWidth="78.0" text="작성자" />
+            <TableColumn fx:id="lcs_tdt" minWidth="0.0" prefWidth="135.0" text="작성일" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="10.0" layoutY="428.0" prefHeight="40.0" prefWidth="580.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-opacity: 0.6;" />
+      <TextField fx:id="tf_search" layoutX="45.0" layoutY="436.0" onKeyReleased="#search" prefHeight="23.0" prefWidth="148.0" />
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="16.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;">
+         <image>
+            <Image url="@research.png" />
+         </image>
+      </ImageView>
+      <Pagination fx:id="page" layoutX="200.0" layoutY="426.0" prefHeight="39.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.mem_info.controller.doughnutController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="316.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@도넛%20기프티콘.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfDon" alignment="CENTER" layoutX="73.0" layoutY="377.0" onAction="#CouponNum" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="902.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.community.controller.sikdanController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="800.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="44.0" prefWidth="192.0" text="식단표" textFill="#cd6c0a">
+               <font>
+                  <Font name="THEJung150" size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="btnleft" mnemonicParsing="false" text="&lt;">
+               <HBox.margin>
+                  <Insets left="100.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="60.0" text="11">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="btnright" mnemonicParsing="false" text="&gt;">
+               <HBox.margin>
+                  <Insets left="15.0" top="20.0" />
+               </HBox.margin>
+            </Button>
+            <ImageView fitHeight="47.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ddit.JPG" />
+               </image>
+               <HBox.margin>
+                  <Insets left="150.0" top="50.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <Separator layoutY="102.0" prefHeight="1.0" prefWidth="800.0" />
+      <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="99.0" layoutY="115.0" prefHeight="748.0" prefWidth="602.0" style="-fx-grid-lines-visible: red;">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="176.0" minHeight="0.0" prefHeight="0.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="325.0" minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="325.0" minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="60.0" valignment="TOP" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="월">
+               <GridPane.margin>
+                  <Insets left="55.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="화" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="55.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="30" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="29" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="23" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="28" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="22" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="21" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="16" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="15" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="9" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="8" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="14" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="27" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="26" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="20" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="2" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="1" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="금" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="55.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="목" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets left="55.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="19" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="7" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="수" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="55.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="13" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="12" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="5" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" top="2.0" />
+               </GridPane.margin>
+            </Label>
+            <Label GridPane.rowIndex="1" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="함박스테이크&#10;도토리묵무침&#10;새우볶음&#10;파프리카버섯볶음&#10;배추김치&#10;쌀밥/콩나물국&#10;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="삼겹살김치볶음&#10;비엔나케잌&#10;오징어실채&#10;땅콩조림&#10;배추김치&#10;쌀밥/순두부찌개&#10;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="제육볶음&#10;김무침&#10;연근조림&#10;김말이튀김&#10;배추김치&#10;쌀밥/어묵국&#10;" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="매콤닭볶음&#10;땅콩멸치볶음&#10;무장아찌&#10;한입돈까스&#10;배추김치&#10;쌀밥/두부된장국&#10;" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="북어포무침&#10;야채고로케&#10;고추장어묵볶음&#10;콩조림&#10;배추김치&#10;쌀밥/만둣국&#10;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="치즈돈까스&#10;진미채볶음&#10;물미역초장&#10;참치양배추볶음&#10;배추김치&#10;쌀밥/다슬기국&#10;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="등심돈까스&#10;사각어묵볶음&#10;양념꺳잎지&#10;치킨너겟&#10;배추김치&#10;쌀밥/황태국&#10;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="안심치킨&#10;콩나물무침&#10;메추리알조림&#10;고추장멸치볶음&#10;배추김치&#10;쌀밥/된장국&#10;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="새우까스&#10;마파두부&#10;비엔나햄케첩&#10;명엽채볶음&#10;배추김치&#10;쌀밥/짜장&#10;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="탕수육&#10;도라지초무침&#10;고추참치&#10;나물무침&#10;배추김치&#10;쌀밥/콩나물국&#10;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="간장불고기&#10;호박버섯볶음&#10;두부양념조림&#10;고구마고로케&#10;무생채&#10;쌀밥/미역국&#10;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="떡산적구이&#10;연두부계란찜&#10;무말랭이&#10;브로컬리샐러드&#10;배추김치&#10;쌀밥/콩나물국" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="돈불고기&#10;만두탕수&#10;시금치무침&#10;꽈리멸치볶음&#10;배추김치&#10;쌀밥/유부된장국&#10;" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="치킨강정&#10;감자채볶음&#10;마늘쫑무침&#10;꺳잎나물&#10;배추김치&#10;쌀밥/된장국&#10;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="훈제오리양파볶음&#10;오복채&#10;파프리카어묵볶음&#10;동그랑땡&#10;배추김치&#10;쌀밥/카레&#10;" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="함박스테이크&#10;들깨무나물&#10;오징어채볶음&#10;아삭이된장무침&#10;배추김치&#10;쌀밥/어묵탕&#10;" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="등심탕수육&#10;멸치볶음&#10;오이무침&#10;느타리버섯볶음&#10;배추김치&#10;쌀밥/콩나물김칫국&#10;" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="생선까스&#10;돈육메추리조림&#10;고구마맛탕&#10;콩나물무침&#10;배추김치&#10;쌀밥/만둣국&#10;" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="야채불고기&#10;두부조림&#10;깐풍기&#10;우엉조림&#10;김치볶음&#10;쌀밥/된장찌개&#10;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="131.0" prefWidth="120.0" text="돈까스&#10;골파김가루무침&#10;명엽채볶음&#10;단무지무침&#10;배추김치&#10;쌀밥/미역국" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="오징어링튀김&#10;계란찜&#10;참치샐러드&#10;무장아찌&#10;배추김치&#10;쌀밥/콩나물국&#10;" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="새우까스&#10;고기잡채&#10;배깍두기&#10;실치견과류볶음&#10;배추김치&#10;쌀밥/오징엇국&#10;" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea prefHeight="224.0" prefWidth="120.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+         </children>
+      </GridPane>
+      <Button fx:id="btn_exit" layoutX="651.0" layoutY="871.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="50.0" text="종료" AnchorPane.topAnchor="871.0" />
+   </children>
+</AnchorPane>

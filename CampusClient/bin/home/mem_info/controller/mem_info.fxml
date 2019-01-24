@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.mem_info.controller.Mem_infoController">
+   <children>
+      <AnchorPane prefHeight="501.0" prefWidth="613.0">
+         <children>
+            <AnchorPane layoutX="30.0" layoutY="90.0" prefHeight="380.0" prefWidth="590.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-opacity: 0.85;" />
+            <HBox prefHeight="55.0" prefWidth="650.0">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@1.JPG" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="15.0" top="9.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Separator layoutY="55.0" prefHeight="5.0" prefWidth="650.0" />
+            <AnchorPane layoutY="70.0" prefHeight="430.0" prefWidth="650.0">
+               <children>
+                  <Button fx:id="btnChange" layoutX="426.0" layoutY="341.0" mnemonicParsing="false" onAction="#change" prefHeight="33.0" prefWidth="100.0" text="정보 수정하기" />
+                  <TextField fx:id="tfId" layoutX="137.0" layoutY="37.0" prefHeight="23.0" prefWidth="163.0" />
+                  <Label layoutX="95.0" layoutY="171.0" text="메일" />
+                  <TextField fx:id="tfName" layoutX="137.0" layoutY="103.0" prefHeight="23.0" prefWidth="163.0" />
+                  <Label layoutX="95.0" layoutY="106.0" text="이름" />
+                  <TextField fx:id="tfTel" layoutX="137.0" layoutY="228.0" prefHeight="23.0" prefWidth="163.0" />
+                  <ImageView fx:id="imgProfile" fitHeight="158.0" fitWidth="184.0" layoutX="412.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../image.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgProfile" fitHeight="158.0" fitWidth="184.0" layoutX="412.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../image.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="71.0" layoutY="232.0" text="전화번호" />
+                  <TextField fx:id="tfMail" layoutX="137.0" layoutY="167.0" prefHeight="23.0" prefWidth="163.0" />
+                  <Label layoutX="84.0" layoutY="40.0" text="아이디" />
+                  <Label layoutX="56.0" layoutY="293.0" text="보유 포인트" />
+                  <TextField fx:id="tfPoint" layoutX="137.0" layoutY="289.0" prefHeight="23.0" prefWidth="163.0" />
+                  <Pane layoutX="406.0" layoutY="89.0" prefHeight="165.0" prefWidth="141.0">
+                     <children>
+                        <ImageView fx:id="imgProfile" fitHeight="165.0" fitWidth="141.0" pickOnBounds="true" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

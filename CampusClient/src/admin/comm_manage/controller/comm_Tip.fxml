@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--관리자가 자격증Tip 게시판을 조회-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.Comm_TipController">
+   <children>
+      <HBox layoutX="-1.0" layoutY="3.0" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label text="자격증TIP">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutY="58.0" prefHeight="0.0" prefWidth="600.0" />
+      <TableView fx:id="tableList" layoutX="10.0" layoutY="73.0" onMouseClicked="#showContent" prefHeight="382.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="tcNo" prefWidth="50.0" text="No." />
+            <TableColumn fx:id="tcTitle" prefWidth="433.0" text="제목" />
+            <TableColumn fx:id="tcDate" minWidth="0.0" prefWidth="100.0" text="작성일" />
+         </columns>
+      </TableView>
+      <Pagination fx:id="page" layoutX="200.0" layoutY="455.0" prefHeight="39.0" prefWidth="200.0" />
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="14.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;">
+         <image>
+            <Image url="@../../../home/community/controller/research.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfSearch" layoutX="45.0" layoutY="463.0" onKeyReleased="#search" prefHeight="23.0" prefWidth="143.0" promptText="검색" />
+   </children>
+</AnchorPane>

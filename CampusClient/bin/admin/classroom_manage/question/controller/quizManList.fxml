@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.classroom_manage.question.controller.QuizManListController">
+   <children>
+      <AnchorPane prefHeight="615.0" prefWidth="796.0">
+         <children>
+            <ImageView fitHeight="606.0" fitWidth="806.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ysmj1.JPG" />
+               </image>
+            </ImageView>
+            <VBox layoutX="27.0" layoutY="90.0" prefHeight="453.0" prefWidth="753.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="450.0" prefWidth="753.0">
+                     <children>
+                        <TableView fx:id="tableQuest" onMouseClicked="#solve" prefHeight="466.0" prefWidth="753.0">
+                          <columns>
+                            <TableColumn fx:id="colQuest" prefWidth="84.0" text="문제코드" />
+                            <TableColumn fx:id="colTitle" prefWidth="369.0" text="문제" />
+                              <TableColumn fx:id="col_diff" prefWidth="107.0" text="난이도" />
+                              <TableColumn fx:id="colCount" minWidth="7.0" prefWidth="99.0" text="조회 수" />
+                            <TableColumn fx:id="colChk" prefWidth="103.0" text="정답자 수" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="-6.0" layoutY="540.0" prefHeight="53.0" prefWidth="812.0">
+               <children>
+                  <Pagination fx:id="page" prefHeight="53.0" prefWidth="298.0" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="242.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addQuiz" prefHeight="35.0" prefWidth="109.0" style="-fx-background-color: transparent;">
+                           <HBox.margin>
+                              <Insets right="15.0" top="12.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

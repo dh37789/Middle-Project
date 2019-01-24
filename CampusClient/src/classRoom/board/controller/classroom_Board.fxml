@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--사용자가 공지사항 리스트를 볼때-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="794.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classRoom.board.controller.Classroom_boardController">
+   <children>
+      <ImageView fitHeight="623.0" fitWidth="811.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@gjsh.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableview" layoutX="17.0" layoutY="94.0" prefHeight="437.0" prefWidth="774.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="colno" prefWidth="75.0" text="No" />
+          <TableColumn fx:id="col_writer" prefWidth="75.0" text="작성자" />
+            <TableColumn fx:id="coltitle" prefWidth="316.0" text="글제목" />
+            <TableColumn fx:id="colfile" prefWidth="37.0" text="파일" />
+            <TableColumn fx:id="colcount" prefWidth="71.0" text="조회" />
+            <TableColumn fx:id="coldate" prefWidth="88.0" text="등록일" />
+            <TableColumn fx:id="remove" prefWidth="136.0" />
+        </columns>
+      </TableView>
+      <Button fx:id="btn_cancel" layoutX="688.0" layoutY="563.0" mnemonicParsing="false" onAction="#btn_cancel_click" prefHeight="23.0" prefWidth="72.0" style="-fx-background-color: transparent;" />
+      <HBox alignment="CENTER_LEFT" layoutX="28.0" layoutY="560.0" prefHeight="29.0" prefWidth="212.0" style="-fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@research.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="tfsearch" prefHeight="23.0" prefWidth="153.0" promptText="제목을 검색하세요">
+               <HBox.margin>
+                  <Insets left="8.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="3.0" top="3.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="writebox" alignment="CENTER" layoutX="353.0" layoutY="545.0" prefHeight="23.0" prefWidth="72.0" spacing="2.0" />
+   </children>
+</AnchorPane>

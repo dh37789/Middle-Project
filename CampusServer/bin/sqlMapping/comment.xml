@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+   PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="comment">
+   <typeAlias alias="commentVO" type="vo.CommentVO" />
+   
+   <insert id="insertCmt" parameterClass="commentVO">
+      insert into com(cmt_id, cmt_memid, cmt_tbd_id, cmt_popbd_id, cmt_qabd_id, cmt_frbd_id, cmt_con, cmt_dt, cmt_admid) 
+      values('com'||com_seq.nextval,#cmt_memid#,#cmt_tbd_id#,#cmt_popbd_id#,'Q'||#cmt_qabd_id#,#cmt_frbd_id#,#cmt_con#,#cmt_dt#,#cmt_admid#)
+   </insert>
+   
+   <select id="getComment" parameterClass="String" resultClass="commentVO">
+      select * from com where cmt_qabd_id = 'Q'||#cmt_qabd_id# order by to_number(substr(cmt_id, 4))
+   </select>
+   
+   <delete id="delComment" parameterClass="String">
+      DELETE FROM COM WHERE cmt_id = #cmt_id#
+   </delete>
+   
+   <insert id="insertPostCmt" parameterClass="commentVO">
+      insert into com(cmt_id, cmt_memid, cmt_tbd_id, cmt_popbd_id, cmt_qabd_id, cmt_frbd_id, cmt_con, cmt_dt) 
+      values('com'||com_seq.nextval,#cmt_memid#,#cmt_tbd_id#,#cmt_popbd_id#,#cmt_qabd_id#,#cmt_frbd_id#,#cmt_con#,#cmt_dt#)
+   </insert>
+   
+   <select id="getPostComment" parameterClass="String" resultClass="commentVO">
+      select * from com where cmt_popbd_id = #cmt_popbd_id# order by to_number(substr(cmt_id, 4))
+   </select>
+   
+   <delete id="delPostComment" parameterClass="String">
+      DELETE FROM COM WHERE cmt_id = #cmt_id#
+   </delete>
+   
+   <insert id="insertFbCmt" parameterClass="commentVO">
+      insert into com(cmt_id, cmt_memid, cmt_tbd_id, cmt_popbd_id, cmt_qabd_id, cmt_frbd_id, cmt_con, cmt_dt) 
+      values('com'||com_seq.nextval,#cmt_memid#,#cmt_tbd_id#,#cmt_popbd_id#,#cmt_qabd_id#,#cmt_frbd_id#,#cmt_con#,#cmt_dt#)
+   </insert>
+   
+   <select id="getFbComment" parameterClass="String" resultClass="commentVO">
+      select * from com where cmt_frbd_id = #cmt_frbd_id# order by to_number(substr(cmt_id, 4))
+   </select>
+   
+   <insert id="insertFbCmtM" parameterClass="commentVO">
+      insert into com(cmt_id, cmt_memid, cmt_tbd_id, cmt_popbd_id, cmt_qabd_id, cmt_frbd_id, cmt_con, cmt_dt) 
+      values('com'||com_seq.nextval,#cmt_memid#,#cmt_tbd_id#,#cmt_popbd_id#,#cmt_qabd_id#,#cmt_frbd_id#,#cmt_con#,#cmt_dt#)
+   </insert>
+   
+   <select id="getTbComment" parameterClass="String" resultClass="commentVO">
+      select * from com where cmt_tbd_id = #cmt_tbd_id# order by to_number(substr(cmt_id, 4))
+   </select>
+   
+   <insert id="insertTbCmt" parameterClass="commentVO">
+      insert into com(cmt_id, cmt_memid, cmt_tbd_id, cmt_popbd_id, cmt_qabd_id, cmt_frbd_id, cmt_con, cmt_dt) 
+      values('com'||com_seq.nextval,#cmt_memid#,#cmt_tbd_id#,#cmt_popbd_id#,#cmt_qabd_id#,#cmt_frbd_id#,#cmt_con#,#cmt_dt#)
+   </insert>
+   
+   <delete id="delTbComment" parameterClass="String">
+      DELETE FROM COM WHERE cmt_id = #cmt_id#
+   </delete>
+   
+</sqlMap>

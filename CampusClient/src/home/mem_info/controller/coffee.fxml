@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="492.0" prefWidth="281.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.mem_info.controller.coffeeController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="316.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@라떼%20기프티콘.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfCof" alignment="CENTER" layoutX="72.0" layoutY="381.0" onAction="#CouponNum" />
+   </children>
+</AnchorPane>

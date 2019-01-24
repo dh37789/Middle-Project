@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  관리자가 자격증 게시판의 글중 하나를 선택해 볼때. 수정,삭제가 가능-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.Comm_lcs_viewController">
+   <children>
+      <Separator layoutY="58.0" prefHeight="0.0" prefWidth="600.0" />
+      <HBox layoutX="-4.0" layoutY="4.0" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label text="자격증 정보">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <TextField fx:id="tfTitle" editable="false" layoutX="60.0" layoutY="73.0" prefHeight="23.0" prefWidth="309.0" />
+      <TextField fx:id="tfDate" layoutX="434.0" layoutY="73.0" prefHeight="23.0" prefWidth="143.0" />
+      <Label layoutX="25.0" layoutY="74.0" text="제목">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="74.0" text="작성일">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taContents" editable="false" layoutX="25.0" layoutY="110.0" prefHeight="344.0" prefWidth="552.0" />
+      <Button fx:id="btnExit" layoutX="521.0" layoutY="461.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="50.0" text="목록" />
+      <Button fx:id="btnUpdate" layoutX="401.0" layoutY="461.0" mnemonicParsing="false" onAction="#update" prefHeight="23.0" prefWidth="50.0" text="수정" />
+      <Button fx:id="btnDel" layoutX="461.0" layoutY="461.0" mnemonicParsing="false" onAction="#delete" prefHeight="23.0" prefWidth="50.0" text="삭제" />
+   </children>
+</AnchorPane>

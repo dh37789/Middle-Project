@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="lecinfo">
+	<typeAlias alias="lectureInfoVO" type="vo.Lecture_infoVO"/>
+	
+		<select id = "getLectureInfo" parameterClass = "String" resultClass = "lectureInfoVO">
+			select * from lecture_info where linf_id = #linf_id#
+		</select>
+		
+		
+		<update id="updatelectInfo" parameterClass="lectureInfoVO">
+		update lecture_info set linf_tc=#linf_tc# ,linf_ph=#linf_ph#,
+		linf_em = #linf_em# , linf_ol=#linf_ol#, linf_lncon=#linf_lnCon#,
+		linf_pupcon=#linf_pupCon# where LINF_ID=#linf_id#
+		</update>
+		
+</sqlMap>

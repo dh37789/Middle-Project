@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="606.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.classroom_manage.comm.controller.AdmClassroom_boardUpController">
+   <children>
+      <Label layoutX="34.0" layoutY="28.0" text="글 수정하기">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <VBox layoutX="-1.0" layoutY="95.0" prefHeight="88.0" prefWidth="794.0">
+         <children>
+            <HBox prefHeight="34.0" prefWidth="794.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="215.0" text="* 글제목">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tftitle" prefHeight="23.0" prefWidth="407.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="794.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="215.0" text="* 작성자">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tfwriter" editable="false" prefHeight="23.0" prefWidth="160.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Separator layoutY="84.0" prefHeight="3.0" prefWidth="794.0" style="-fx-background-color: blue;" />
+      <TextArea fx:id="tarea" layoutX="16.0" layoutY="200.0" prefHeight="295.0" prefWidth="786.0" />
+      <Label layoutX="20.0" layoutY="176.0" text="작성내용" />
+      <VBox layoutX="20.0" layoutY="558.0" prefHeight="34.0" prefWidth="772.0">
+         <children>
+            <HBox prefHeight="34.0" prefWidth="794.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="215.0" text="첨부파일 :">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="tffilepath" disable="true" editable="false" prefHeight="22.0" prefWidth="326.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="searchfile" mnemonicParsing="false" onAction="#searchfile" text="찾아보기..">
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox fx:id="writerbox" alignment="CENTER" layoutX="699.0" layoutY="509.0" onMouseClicked="#edit" prefHeight="22.0" prefWidth="72.0" spacing="2.0" style="-fx-border-color: lightgray; -fx-border-radius: 8; -fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@edit.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="12.0" prefWidth="46.0" text="글수정">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="backbox" alignment="CENTER" layoutX="617.0" layoutY="509.0" onMouseClicked="#back" prefHeight="22.0" prefWidth="72.0" spacing="2.0" style="-fx-border-color: lightgray; -fx-border-radius: 8; -fx-background-color: white;">
+         <children>
+            <Label prefHeight="21.0" prefWidth="46.0" text="뒤로가기">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

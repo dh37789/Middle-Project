@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="coupon">
+	<typeAlias alias="couponVO" type="vo.CouponVO"/>
+	
+		<select id="getCouponId" parameterClass="string" resultClass="couponVO">
+			select * from coupon where co_id=#co_id#
+		</select>
+
+</sqlMap>

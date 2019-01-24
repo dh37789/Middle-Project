@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="606.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.classroom_manage.video.controller.admin_videoAddController">
+   <children>
+      <ImageView fitHeight="618.0" fitWidth="821.0" layoutX="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@gd.JPG" />
+         </image>
+      </ImageView>
+      <VBox layoutX="172.0" layoutY="159.0" prefHeight="243.0" prefWidth="326.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="34.0" prefWidth="387.0">
+               <children>
+                  <TextField fx:id="tftitle" prefHeight="23.0" prefWidth="139.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="794.0">
+               <children>
+                  <TextField fx:id="tfwriter" prefHeight="23.0" prefWidth="92.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="16.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="712.0">
+               <children>
+                  <TextField fx:id="tfwriter2" prefHeight="23.0" prefWidth="233.0" promptText="동영상 시간 (초 단위)">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="17.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="34.0" prefWidth="794.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="655.0">
+                     <children>
+                        <TextField fx:id="tffilepath" disable="true" editable="false" prefHeight="23.0" prefWidth="233.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="searchfile" mnemonicParsing="false" onAction="#searchfile" text="찾아보기..">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox fx:id="writerbox" alignment="CENTER" layoutX="664.0" layoutY="531.0" prefHeight="34.0" prefWidth="74.0" spacing="2.0" style="-fx-border-color: transparent; -fx-border-radius: 8; -fx-background-color: transparent;">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <Label prefHeight="12.0" prefWidth="46.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="backbox" alignment="CENTER" layoutX="577.0" layoutY="531.0" prefHeight="34.0" prefWidth="74.0" spacing="2.0" style="-fx-border-color: transparent; -fx-border-radius: 8; -fx-background-color: transparent;">
+         <children>
+            <Label prefHeight="20.0" prefWidth="55.0" style="-fx-background-color: trans;">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="502.0" layoutY="217.0" prefHeight="15.0" prefWidth="269.0" text="초급자바                            un001" />
+      <Label layoutX="502.0" layoutY="264.0" prefHeight="15.0" prefWidth="269.0" text="고급자바                            un002" />
+      <Label layoutX="510.0" layoutY="308.0" prefHeight="15.0" prefWidth="269.0" text="jquery                             un003" />
+      <Label layoutX="518.0" layoutY="356.0" prefHeight="15.0" prefWidth="269.0" text="jsp                                un004" />
+      <Label layoutX="494.0" layoutY="402.0" prefHeight="15.0" prefWidth="269.0" text="데이터베이스                        un005" />
+   </children>
+</AnchorPane>

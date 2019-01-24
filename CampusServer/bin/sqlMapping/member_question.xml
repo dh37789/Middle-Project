@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member_question">
+<typeAlias alias="memQuizVO" type="vo.Member_questionVO"/>
+<insert id="insertMemQuiz" parameterClass="Map">
+	insert into member_question(mem_pqt_memid, mem_pqt_pqtid, mem_pqt_ean) values (#mem_id#, #pqt_id#, 1)
+</insert>
+</sqlMap>

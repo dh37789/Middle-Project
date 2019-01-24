@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member_coupon">
+<typeAlias alias="member_couponVO" type="vo.Member_couponVO"/>
+
+	<select  id="getCouponChk" parameterClass="map" resultClass="int">
+		select count(*) from member_coupon
+		where mem_co_memid = #memid#
+		and mem_co_id= #coid#
+	</select>
+	
+	<select id="getCouponCount" parameterClass="map" resultClass="member_couponVO">
+	select 
+    mem_co_mcid,
+    mem_co_id,
+    mem_co_memid,
+    mem_co_con,
+    NVL(mem_co_count,0) as mem_co_count
+from member_coupon
+	 	where mem_co_memid = #memid# 
+	 	and mem_co_id = #coid#
+	 </select>
+	
+	
+	<insert id="insertCouponChk" parameterClass="member_couponVO">
+		insert into member_coupon(mem_co_mcid, mem_co_id, mem_co_memid, mem_co_con, mem_co_count) 
+		values('MC'||mc_seq.NEXTVAL, #mem_co_id#, #mem_co_memid#, #mem_co_con#, 1)
+	</insert>
+	
+	<update id="updateCouponChk" parameterClass="map">
+		update member_coupon set mem_co_count = mem_co_count + 1 
+		where mem_co_id = #coid# and mem_co_memid = #memid#
+	</update>
+	
+	<update id="updateUseCoupon" parameterClass="map">
+		update member_coupon set mem_co_count = mem_co_count - 1 
+		where mem_co_id = #coid# and mem_co_memid = #memid#
+	</update>
+	
+</sqlMap>

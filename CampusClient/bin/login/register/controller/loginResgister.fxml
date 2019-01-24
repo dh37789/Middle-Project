@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="616.0" maxWidth="420.0" minHeight="600.0" minWidth="420.0" prefHeight="616.0" prefWidth="420.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.register.controller.LoginResgisterController">
+   <children>
+      <Separator layoutY="395.0" prefHeight="4.0" prefWidth="420.0" />
+      <VBox alignment="CENTER" layoutY="87.0" prefHeight="309.0" prefWidth="125.0" spacing="35.0" style="-fx-background-color: #e0e0e0;">
+         <children>
+            <Label text="아이디" />
+            <Label alignment="TOP_CENTER" text="이름" />
+            <Label text="비밀번호" />
+            <Label text="비밀번호 확인" />
+            <Label text="전화번호" />
+            <Label text="이메일">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding></Label>
+         </children>
+         <padding>
+            <Insets top="2.0" />
+         </padding>
+      </VBox>
+      <Separator layoutX="122.0" layoutY="87.0" orientation="VERTICAL" prefHeight="309.0" prefWidth="3.0" />
+      <VBox alignment="TOP_CENTER" layoutX="135.0" layoutY="98.0" prefHeight="297.0" prefWidth="171.0" spacing="26.5">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+         <children>
+            <AnchorPane prefHeight="297.0" prefWidth="171.0">
+               <children>
+                  <TextField fx:id="tfId" layoutX="-1.0" onMouseClicked="#resetId" prefWidth="171.0" promptText="ID" />
+                  <TextField fx:id="tfName" layoutX="-1.0" layoutY="52.0" onMouseClicked="#nameReset" prefWidth="171.0" promptText="name" />
+                  <PasswordField fx:id="tfPass" layoutX="-1.0" layoutY="103.0" onMouseClicked="#psReset" prefWidth="171.0" promptText="Password">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <PasswordField fx:id="tfPassChk" layoutX="-1.0" layoutY="153.0" onMouseClicked="#PsChkRe" prefWidth="171.0" promptText="Passward 확인">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField fx:id="tfTel" layoutX="-1.0" layoutY="202.0" onMouseClicked="#telRe" prefHeight="23.0" prefWidth="171.0" promptText="- 를 포함해서 입력" />
+                  <TextField fx:id="tfMail" layoutX="-1.0" layoutY="253.0" onMouseClicked="#mailRe" prefHeight="23.0" prefWidth="171.0" promptText="email" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Button fx:id="btnIdChk" layoutX="325.0" layoutY="103.0" mnemonicParsing="false" onAction="#idChk" text="중복확인" />
+      <Separator layoutY="85.0" prefHeight="4.0" prefWidth="420.0" />
+      <ImageView fitHeight="41.0" fitWidth="198.0" layoutX="241.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ddit.JPG" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="45.0" text="JOIN" textFill="#f07a1a">
+         <font>
+            <Font name="Bodoni MT Bold" size="36.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="115.0" layoutY="543.0" prefHeight="68.0" prefWidth="200.0" spacing="40.0">
+         <children>
+            <Button fx:id="join" mnemonicParsing="false" onAction="#Join" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #DC6721; -fx-background-radius: 30; -fx-border-radius: ;" text="회원가입" textFill="WHITE">
+               <effect>
+                  <DropShadow height="30.0" radius="14.5" spread="0.07" width="30.0" />
+               </effect></Button>
+            <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancel" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #DC6721; -fx-background-radius: 30;" text="취소" textFill="WHITE">
+               <effect>
+                  <DropShadow height="30.0" radius="14.5" spread="0.07" width="30.0" />
+               </effect></Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="428.0" prefHeight="113.0" prefWidth="381.0" spacing="30.0">
+         <children>
+            <WebView fx:id="webCap" prefHeight="80.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </WebView>
+            <VBox alignment="CENTER_RIGHT" prefHeight="103.0" prefWidth="139.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="tfCaptcha" />
+                  <Button fx:id="btnRe" mnemonicParsing="false" onAction="#captchaRe" text="새로고침" />
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <Label layoutX="53.0" layoutY="404.0" text="자동 가입 방지 절차입니다. 그림의 문구를 입력해 주세요." />
+      <Label fx:id="lbPsChk" layoutX="136.0" layoutY="284.0" prefHeight="15.0" prefWidth="253.0" style="-fx-text-fill: red;" />
+      <Label fx:id="lbIdChk" layoutX="136.0" layoutY="132.0" prefHeight="15.0" prefWidth="253.0" style="-fx-text-fill: red;" />
+   </children>
+</AnchorPane>

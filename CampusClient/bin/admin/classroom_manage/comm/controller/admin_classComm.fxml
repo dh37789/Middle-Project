@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane fx:id="pane" prefHeight="606.0" prefWidth="763.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="admin.classroom_manage.comm.controller.admin_classCommController">
+   <children>
+      <VBox prefHeight="606.0" prefWidth="763.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="763.0" spacing="20.0">
+               <children>
+                  <Button fx:id="noticeBoard" mnemonicParsing="false" onAction="#notice" text="공지사항 게시판" />
+                  <Button fx:id="subBoaed" mnemonicParsing="false" onAction="#subject" text="과제 제출 게시판" />
+                  <Button fx:id="qnaBoard" mnemonicParsing="false" onAction="#qna" text="질의응답 게시판" />
+                  <Button fx:id="postBoard" mnemonicParsing="false" onAction="#post" text="강의후기 게시판" />
+               </children>
+            </HBox>
+            <Pane fx:id="conPane" prefHeight="545.0" prefWidth="763.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

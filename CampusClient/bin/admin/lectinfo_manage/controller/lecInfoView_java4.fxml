@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--관리자가 관리자 메인에서 강의정보관리 메뉴를 클릭시 뜨는 메인화면. 과목정보를 저장하고 pdf출력 가능-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.lectinfo_manage.controller.lecInfoView_java1_Controller">
+   <children>
+      <ImageView fitHeight="906.0" fitWidth="809.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@04.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-4.0" layoutY="263.0" prefHeight="641.0" prefWidth="809.0">
+         <children>
+            <TextField fx:id="tf_id" editable="false" layoutX="207.0" layoutY="77.0" prefHeight="23.0" prefWidth="192.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_em" editable="false" layoutX="207.0" layoutY="144.0" prefHeight="23.0" prefWidth="454.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_ph" editable="false" layoutX="493.0" layoutY="109.0" prefHeight="23.0" prefWidth="192.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_tc" editable="false" layoutX="207.0" layoutY="110.0" prefHeight="23.0" prefWidth="192.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_nm" editable="false" layoutX="493.0" layoutY="74.0" prefHeight="23.0" prefWidth="192.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btn_pdf" layoutX="595.0" layoutY="565.0" mnemonicParsing="false" onAction="#pdf" prefHeight="41.0" prefWidth="105.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_ol" editable="false" layoutX="207.0" layoutY="177.0" prefHeight="110.0" prefWidth="454.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_lncon" editable="false" layoutX="207.0" layoutY="308.0" prefHeight="110.0" prefWidth="454.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_pupcon" editable="false" layoutX="207.0" layoutY="439.0" prefHeight="110.0" prefWidth="454.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btnedit" layoutX="520.0" layoutY="572.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="62.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btnconfirm" layoutX="445.0" layoutY="572.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="62.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

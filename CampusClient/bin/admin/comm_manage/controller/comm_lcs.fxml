@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  관리자가 자격증정보 게시판을 조회-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.comm_manage.controller.Comm_lcsController">
+   <children>
+      <HBox layoutX="-4.0" layoutY="1.0" prefHeight="50.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="49.0" prefWidth="204.0" text="자격증 정보">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <padding>
+                  <Insets left="30.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Separator layoutY="58.0" prefHeight="0.0" prefWidth="600.0" />
+      <TableView fx:id="tableLcs" layoutX="10.0" layoutY="73.0" onMouseClicked="#showContents" prefHeight="373.0" prefWidth="580.0">
+         <columns>
+            <TableColumn fx:id="tcNo" prefWidth="50.0" text="No." />
+            <TableColumn fx:id="tcTitle" prefWidth="298.0" text="제목" />
+            <TableColumn fx:id="tcAdmin" minWidth="0.0" prefWidth="81.0" text="작성자" />
+            <TableColumn fx:id="tcDate" minWidth="0.0" prefWidth="150.0" text="작성일" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnAdd" layoutX="526.0" layoutY="459.0" mnemonicParsing="false" onAction="#add" prefHeight="23.0" prefWidth="50.0" text="등록" />
+      <TextField fx:id="tf_search" layoutX="47.0" layoutY="462.0" onKeyReleased="#search" prefHeight="23.0" prefWidth="137.0" />
+      <Pagination fx:id="page" layoutX="200.0" layoutY="454.0" prefHeight="39.0" prefWidth="200.0" />
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="16.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1.0;">
+         <image>
+            <Image url="@../../../home/community/controller/research.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
