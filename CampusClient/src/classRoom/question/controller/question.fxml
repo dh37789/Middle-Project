@@ -52,7 +52,7 @@
                <children>
                   <TextArea fx:id="taResult" editable="false" focusTraversable="false" prefHeight="155.0" prefWidth="834.0">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="20.0" />
                      </font>
                   </TextArea>
                </children>

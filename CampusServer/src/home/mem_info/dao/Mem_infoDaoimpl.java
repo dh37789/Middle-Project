@@ -56,7 +56,7 @@ public class Mem_infoDaoimpl implements IMem_infoDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return cnt;
 	}
 	@Override
 	public int getCouponChk(Map<String, String> map) {

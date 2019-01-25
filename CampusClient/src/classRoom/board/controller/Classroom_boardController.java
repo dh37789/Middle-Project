@@ -47,6 +47,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -159,7 +160,7 @@ public class Classroom_boardController {
 								FileInputStream fin = null;
 								FileOutputStream fout = null;
 								String dir = "D:/A_TeachingMaterial/4.MiddleProject/workspace/CampusClient/sendFile/";
-								File file = new File(dir + vo.getMem_id() + "/" + ((NbdVO)getTableRow().getItem()).getNbd_file());
+								File file = new File(dir + "admin/" + ((NbdVO)getTableRow().getItem()).getNbd_file());
 								try {
 									fin = new FileInputStream(file);
 									FileChooser fileChooser = new FileChooser();
@@ -283,23 +284,6 @@ public class Classroom_boardController {
 
 	@FXML
 	void btn_cancel_click(ActionEvent event) throws IOException {
-
-		if (admin == null) {
-			root.getChildren().clear();
-			Parent login = FXMLLoader.load(getClass().getResource("../../main/controller/classroomhalfMain.fxml"));
-			root.getChildren().setAll(login);
-		} else {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../admin/classroom_manage/comm/controller/admin_classComm.fxml"));
-
-			Parent root = loader.load();
-
-			admin_classCommController com = loader.getController();
-
-			com.setAvo(admin);
-			AnchorPane pane = (AnchorPane) this.root.getParent();
-
-			pane.getChildren().setAll(root);
-		}
 	}
 
 	
@@ -356,7 +340,7 @@ public class Classroom_boardController {
 			List<NbdVO> list = null;
 			String str = "%" + tfsearch.getText().trim() + "%";
 			try {
-				list = service.selectTi(str);
+				listall = service.selectTi(str);
 				if ("".equals(str)) {
 					table();
 				} else {

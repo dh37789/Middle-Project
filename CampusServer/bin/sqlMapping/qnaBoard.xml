@@ -6,7 +6,7 @@
 <sqlMap namespace="qnaBoard">
 	<typeAlias alias="qnaBoardVO" type="vo.Qna_boardVO"/>
 	<select id="getQnaList" resultClass="qnaBoardVO">
-		select * from qna_board order by to_number(substr(qabd_id, 2))
+		select * from qna_board order by to_number(substr(qabd_id, 2)) desc
 	</select>
 	<insert id="insertBoard" parameterClass="qnaBoardVO">
 		insert into qna_board(qabd_id, qabd_ti, qabd_dt, qabd_con, qabd_ps, qabd_wrr, qabd_memid) 

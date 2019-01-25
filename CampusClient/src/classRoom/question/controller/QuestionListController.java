@@ -166,7 +166,7 @@ public class QuestionListController {
 									star += "★  ";
 								}
 								setText(star);
-								setFont(Font.font ("Verdana", 12));
+								setFont(Font.font ("Arial", 12));
 								setGraphic(null);
 		            	  }
 					};

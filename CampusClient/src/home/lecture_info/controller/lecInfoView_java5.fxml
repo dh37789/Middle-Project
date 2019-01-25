@@ -9,24 +9,24 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.lecture_info.controller.lecInfoView_java1_Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.lecture_info.controller.lecInfoView_java1_Controller">
    <children>
-      <ImageView fitHeight="900.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="630.0" fitWidth="560.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@1-5.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="-4.0" layoutY="263.0" prefHeight="630.0" prefWidth="800.0">
+      <AnchorPane layoutY="184.0" prefHeight="428.0" prefWidth="540.0">
          <children>
-            <TextField fx:id="tf_id" editable="false" layoutX="208.0" layoutY="71.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: transparent;" />
-            <TextField fx:id="tf_em" editable="false" layoutX="208.0" layoutY="141.0" prefHeight="23.0" prefWidth="448.0" style="-fx-background-color: transparent;" />
-            <TextField fx:id="tf_ph" editable="false" layoutX="492.0" layoutY="105.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: transparent;" />
-            <TextField fx:id="tf_tc" editable="false" layoutX="208.0" layoutY="105.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: transparent;" />
-            <TextField fx:id="tf_nm" editable="false" layoutX="492.0" layoutY="71.0" prefHeight="23.0" prefWidth="174.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="btn_pdf" layoutX="591.0" layoutY="561.0" mnemonicParsing="false" onAction="#pdf" prefHeight="39.0" prefWidth="105.0" style="-fx-background-color: transparent;" />
-            <TextArea fx:id="ta_ol" editable="false" layoutX="208.0" layoutY="174.0" prefHeight="110.0" prefWidth="448.0" style="-fx-background-color: transparent;" />
-            <TextArea fx:id="ta_lncon" editable="false" layoutX="208.0" layoutY="304.0" prefHeight="110.0" prefWidth="448.0" style="-fx-background-color: transparent;" />
-            <TextArea fx:id="ta_pupcon" editable="false" layoutX="208.0" layoutY="433.0" prefHeight="110.0" prefWidth="448.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_id" editable="false" focusTraversable="false" layoutX="146.0" layoutY="48.0" prefHeight="23.0" prefWidth="140.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_em" editable="false" focusTraversable="false" layoutX="146.0" layoutY="94.0" prefHeight="23.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_ph" editable="false" focusTraversable="false" layoutX="345.0" layoutY="71.0" prefHeight="23.0" prefWidth="162.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_tc" editable="false" focusTraversable="false" layoutX="146.0" layoutY="71.0" prefHeight="23.0" prefWidth="140.0" style="-fx-background-color: transparent;" />
+            <TextField fx:id="tf_nm" editable="false" focusTraversable="false" layoutX="346.0" layoutY="47.0" prefHeight="23.0" prefWidth="162.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="btn_pdf" layoutX="411.0" layoutY="392.0" mnemonicParsing="false" onAction="#pdf" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_ol" editable="false" focusTraversable="false" layoutX="148.0" layoutY="121.0" prefHeight="85.0" prefWidth="361.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_lncon" editable="false" focusTraversable="false" layoutX="148.0" layoutY="213.0" prefHeight="85.0" prefWidth="361.0" style="-fx-background-color: transparent;" />
+            <TextArea fx:id="ta_pupcon" editable="false" focusTraversable="false" layoutX="148.0" layoutY="304.0" prefHeight="85.0" prefWidth="361.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="42.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />

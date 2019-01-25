@@ -108,9 +108,9 @@ public class LoginResgisterController {
     @FXML
     void Join(ActionEvent event) throws RemoteException, UnsupportedEncodingException {
     	stage = (Stage) join.getScene().getWindow();
-    	String key = "dditCampusProject";       // key는 16자 이상
     	String regex1 = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$"; 
     	String regex2 = "^\\d{3}-\\d{3,4}-\\d{4}$";
+    	String key = "dditCampusProject";       // key는 16자 이상
     	AES256Util aes256 = new AES256Util(key);
     	if(tfId.getText().isEmpty()) {
     		alert(null, "ID를 입력하세요.");
@@ -175,7 +175,7 @@ public class LoginResgisterController {
     	memvo.setMem_ph(tfTel.getText());
     	memvo.setMem_aDay(0);
     	memvo.setMem_irt("");
-    	memvo.setMem_pt(0);
+    	memvo.setMem_pt(500);
     	memvo.setMem_access(0);
     	
     	int cnt = service.insertMember(memvo);

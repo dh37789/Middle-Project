@@ -33,7 +33,7 @@
       <Separator prefWidth="200.0" />
       <AnchorPane prefHeight="431.0" prefWidth="650.0">
          <children>
-            <Button fx:id="btnCancel" layoutX="577.0" layoutY="383.0" mnemonicParsing="false" onAction="#cancel" prefHeight="33.0" prefWidth="64.0" text="취소" />
+            <Button fx:id="btnCancel" layoutX="577.0" layoutY="367.0" mnemonicParsing="false" onAction="#cancel" prefHeight="33.0" prefWidth="64.0" text="취소" />
             <TextField fx:id="tfId" layoutX="137.0" layoutY="37.0" prefHeight="23.0" prefWidth="163.0" />
             <Label layoutX="95.0" layoutY="171.0" text="메일" />
             <TextField fx:id="tfName" layoutX="137.0" layoutY="103.0" prefHeight="23.0" prefWidth="163.0" />
@@ -49,7 +49,7 @@
                </font>
             </Label>
             <TextField fx:id="tfPoint" layoutX="137.0" layoutY="289.0" prefHeight="23.0" prefWidth="163.0" />
-            <Button fx:id="btnChange" layoutX="503.0" layoutY="383.0" mnemonicParsing="false" onAction="#change" prefHeight="33.0" prefWidth="68.0" text="수정 하기" />
+            <Button fx:id="btnChange" layoutX="503.0" layoutY="367.0" mnemonicParsing="false" onAction="#change" prefHeight="33.0" prefWidth="68.0" text="수정 하기" />
             <Button fx:id="btnImgUP" layoutX="418.0" layoutY="278.0" mnemonicParsing="false" onAction="#imgUp" prefHeight="23.0" prefWidth="118.0" text="사진 넣기" />
             <Button fx:id="btnImgDel" layoutX="418.0" layoutY="308.0" mnemonicParsing="false" onAction="#imgDel" prefHeight="23.0" prefWidth="118.0" text="사진 삭제" />
             <Pane layoutX="401.0" layoutY="90.0" prefHeight="178.0" prefWidth="152.0">

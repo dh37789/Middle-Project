@@ -23,14 +23,18 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Pagination;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 import vo.AdminVO;
 import vo.CommentVO;
 import vo.Homework_boardVO;
@@ -67,6 +71,9 @@ public class QnABoardController {
     private TableColumn<?, ?> colDate;
 
     @FXML
+    private TableColumn<ImageView, ImageView> colLock;
+    
+    @FXML
     private Button btnWrite;
 
     @FXML
@@ -101,7 +108,7 @@ public class QnABoardController {
 
     private ObservableList<String> searchData;
 
-    private int rowPerPage = 15;
+    private int rowPerPage = 14;
     
 	@FXML
     void search(ActionEvent event) {
@@ -184,6 +191,8 @@ public class QnABoardController {
         assert colDate != null : "fx:id=\"colDate\" was not injected: check your FXML file 'qnaBoard.fxml'.";
         assert btnWrite != null : "fx:id=\"btnWrite\" was not injected: check your FXML file 'qnaBoard.fxml'.";
         assert page != null : "fx:id=\"page\" was not injected: check your FXML file 'qnaBoard.fxml'.";
+        assert colLock != null : "fx:id=\"colLock\" was not injected: check your FXML file 'qnaBoard.fxml'.";
+
         Registry reg;
         try {
         	reg = LocateRegistry.getRegistry("localhost", 3333);
@@ -209,7 +218,61 @@ public class QnABoardController {
         		new PropertyValueFactory<>("qabd_wrr"));
         colDate.setCellValueFactory(
         		new PropertyValueFactory<>("qabd_dt"));
-        
+        colLock.setCellFactory(new Callback<TableColumn<ImageView,ImageView>, TableCell<ImageView,ImageView>>() {
+        	@Override
+        	public TableCell<ImageView, ImageView> call(TableColumn<ImageView, ImageView> param) {
+        		TableCell<ImageView, ImageView> cell = new TableCell<ImageView, ImageView>() {
+        			Image lockImg = new Image(getClass().getResourceAsStream("locked.png"));
+        			ImageView img = new ImageView(lockImg);
+        			{
+        				img.setFitHeight(10);
+        				img.setFitWidth(10);
+        			}
+        			@Override
+        			protected void updateItem(ImageView item, boolean empty) {
+        				super.updateItem(item, empty);
+        				if (empty) {
+							setText(null);
+							setGraphic(null);
+						}else {
+							if (getTableRow().getItem() != null) {
+								if (((Qna_boardVO)getTableRow().getItem()).getQabd_ps()!=null) {
+									setGraphic(img);
+								}
+							}
+						}
+        				
+        			}
+        		};
+        		cell.setStyle("-fx-alignment: CENTER;");
+        		return cell;
+        	}
+		});
+//        remove.setCellFactory(new Callback<TableColumn<ImageView, ImageView>, TableCell<ImageView, ImageView>>() {
+//			@Override
+//			public TableCell<ImageView, ImageView> call(TableColumn<ImageView, ImageView> param) {
+//				TableCell<ImageView, ImageView> cell = new TableCell<ImageView, ImageView>() {
+//					@Override
+//					public void updateItem(ImageView imgview, boolean empty) {
+//						if (empty) {
+//							setText(null);
+//							setGraphic(null);
+//						} else {
+//							Image saveImg = new Image(getClass().getResourceAsStream("search.png"));
+//							ImageView imgview2 = new ImageView(saveImg);
+//							imglist.add(imgview2);
+//							imgview2.setFitHeight(15);
+//							imgview2.setFitWidth(15);
+//							setGraphic(imgview2);
+//
+//						}
+//
+//					}
+//				};
+//				return cell;
+//			}
+//
+//		});
         qnaSize = numList.size();
         
         paging();

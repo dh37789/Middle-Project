@@ -487,7 +487,7 @@ public class ClassroomController extends TreeView<String> {
 				item[i] = new TreeItem<String>(list.get(i).getVd_nm(), new ImageView(VideoIcon));
 
 			}
-
+			
 			rootItem.getChildren().addAll(item);
 			tree.setRoot(rootItem);
 
@@ -594,14 +594,15 @@ public class ClassroomController extends TreeView<String> {
 			@Override
 			public void changed(ObservableValue observable, Object oldValue, Object newValue) {
 				TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-			/*	if(tree.getSelectionModel().getSelectedItem().getChildren() == null) {
-					return;
-				}
-				if (tree.getSelectionModel().getSelectedItem().getChildren().isEmpty()) {
-					if (controller != null) {
-						controller.stopVd();
+				if (tree.getSelectionModel().getSelectedItem()!= null) {
+					if(tree.getSelectionModel().getSelectedItem().getChildren() == null) {
+						return;
 					}
-				}*/
+					if (tree.getSelectionModel().getSelectedItem().getChildren().isEmpty()) {
+						if (controller != null) {
+							controller.stopVd();
+						}
+					}
 				try {
 					if ("강의 목록".equals(selectedItem.getValue()) || "초급자바".equals(selectedItem.getValue())
 							|| "고급자바".equals(selectedItem.getValue()) || "JQUERY".equals(selectedItem.getValue())
@@ -616,6 +617,7 @@ public class ClassroomController extends TreeView<String> {
 
 			}
 
+			}
 		});
 
 		// 강의실 나가기 버튼을 클릭했을떄 이벤트

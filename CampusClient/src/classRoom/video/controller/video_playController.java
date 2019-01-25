@@ -114,6 +114,9 @@ public class video_playController {
 	}
 
 	public void setMvo(MemberVO mvo) {
+		if (vo == null) {
+			return;
+		}
 		this.mvo = mvo;
 		param.put("mem_id", mvo.getMem_id());
 		param.put("vd_id", vo.getVd_id());
@@ -228,6 +231,7 @@ public class video_playController {
 	public IVideoService service;
 	public VideoVO vo;
 	private volatile boolean timework = true;
+	
 	private volatile static boolean worker = true;
 	private int times;
 	private Double tts;
@@ -335,6 +339,7 @@ public class video_playController {
 								    		Alert alert = new Alert(AlertType.INFORMATION);
 								    		alert.setHeaderText(null);
 								    		alert.setContentText("20포인트 적립완료!");
+								    		mvo.setMem_pt(mvo.getMem_pt()+20);
 								    		alert.showAndWait();
 										}
 									} catch (Exception e) {

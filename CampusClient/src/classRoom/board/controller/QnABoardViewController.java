@@ -51,9 +51,6 @@ public class QnABoardViewController {
     private TextField tfTi;
 
     @FXML
-    private TextField tfSub;
-
-    @FXML
     private TextField tfDate;
 
     @FXML
@@ -239,7 +236,6 @@ public class QnABoardViewController {
     void initialize() {
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
         assert tfTi != null : "fx:id=\"tfTi\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
-        assert tfSub != null : "fx:id=\"tfSub\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
         assert tfDate != null : "fx:id=\"tfDate\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
         assert lbMem != null : "fx:id=\"lbMem\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
         assert paneV != null : "fx:id=\"paneV\" was not injected: check your FXML file 'qnaBoardView.fxml'.";
@@ -261,15 +257,12 @@ public class QnABoardViewController {
 		}
         paneReply.setStyle("-fx-background-color:transparent;");
         tfTi.setEditable(false);
-        tfSub.setEditable(false);
         tfDate.setEditable(false);
         taCon.setEditable(false);
         tfTi.setFocusTraversable(false);
-        tfSub.setFocusTraversable(false);
         tfDate.setFocusTraversable(false);
         taCon.setFocusTraversable(false);
         tfTi.setMouseTransparent(true);
-        tfSub.setMouseTransparent(true);
         taCon.setMouseTransparent(true);
         tfDate.setMouseTransparent(true);
         

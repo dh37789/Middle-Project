@@ -1,15 +1,23 @@
 package login.search.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.UUID;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailException;
@@ -23,6 +31,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import login.register.controller.AES256Util;
 import login.search.service.ISearchService;
 import vo.MemberVO;
 
@@ -60,20 +69,28 @@ public class PassSearchController {
     }
 
     @FXML
-    void search(ActionEvent event) throws RemoteException, EmailException {
+    void search(ActionEvent event) throws RemoteException, EmailException, UnsupportedEncodingException {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", ""); // -를 제거해 주었다. 
 		uuid = uuid.substring(0, 6); //uuid를 앞에서부터 6자리 잘라줌.
-    	
+		
+		String key = "dditCampusProject";       // key는 16자 이상
+    	AES256Util aes256 = new AES256Util(key);
     	
     	String strId = tfId.getText();
     	String strTel = tfTel.getText();
     	String strEm = tfMail.getText();
-    	
+    	String aes= "";
+		try {
+			aes = aes256.aesEncode(uuid);
+		} catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException
+				| InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e) {
+			e.printStackTrace();
+		}
     	Map<String, String> map = new HashMap<>();
     	map.put("mem_id", strId);
     	map.put("mem_ph", strTel);
     	map.put("mem_em", strEm);
-    	map.put("mem_ps", uuid);
+    	map.put("mem_ps", aes);
     	
     	
     	if(tfId.getText().isEmpty()) {
@@ -100,18 +117,18 @@ public class PassSearchController {
     		email.setHostName("smtp.naver.com"); // SMTP 서버명
     		email.setSmtpPort(587); // SMTP 포트
     		// email을 보내는 사람의 아이디와 비밀번호
-    		email.setAuthenticator(new DefaultAuthenticator("kangyuigu", "rkd990114")); // 아이디와 비밀번호 입력.
+    		email.setAuthenticator(new DefaultAuthenticator("jns37789", "dnjcl@9310")); // 아이디와 비밀번호 입력.
     		//공개 이메일 setSSLOnConnect
     		//연결시 SMTP 전송에 대해 SSL / TLS 암호화를 사용할지 여부를 설정합니다 
     		//(SMTPS / POPS). setStartTLSRequired (boolean)보다 우선합니다
     		email.setSSLOnConnect(true);
     		email.setCharset("euc-kr"); // 한글로 인코딩
-    		email.setFrom("kangyuigu@naver.com"); // 보내는 사람의 메일
+    		email.setFrom("jns37789@naver.com"); // 보내는 사람의 메일
     		String sub = strId + "님의 임시 비밀번호 발급안내";
     		email.setSubject(sub); // 메일의 제목
     		String content = strId + "님의 임시 비밀번호입니다. : " + uuid;
     		email.setMsg(content); // 메일의 본문
-    		email.addTo("kangyuigu@naver.com"); // 받는 사람의 메일주소
+    		email.addTo("jns37789@naver.com"); // 받는 사람의 메일주소
     		email.send(); // 메일전송 메서드
     		Inform("임시 비밀번호가 전송되었습니다.");
     		System.out.println("전송 완료");

@@ -231,11 +231,11 @@ public class classroom_boardViewController {
 		} catch (NotBoundException e) {
 			e.printStackTrace();
 		}
-        tfdate.setMouseTransparent(true);
-        tffile.setMouseTransparent(true);
-        tftitle.setMouseTransparent(true);
-        tfwriter.setMouseTransparent(true);
-        tarea.setMouseTransparent(true);
+//        tfdate.setMouseTransparent(true);
+//        tffile.setMouseTransparent(true);
+//        tftitle.setMouseTransparent(true);
+//        tfwriter.setMouseTransparent(true);
+//        tarea.setMouseTransparent(true);
         
         
         backbutton.setFocusTraversable(false);

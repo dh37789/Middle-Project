@@ -472,7 +472,7 @@ public class SubBoardController {
 							setText(null);
 							setGraphic(null);
 						} else {
-							if (item != null) {
+							if (getTableRow().getItem() != null) {
 								try {
 									System.out.println(((Homework_boardVO) getTableRow().getItem()).getHwbd_frt());
 									fileName = ((Homework_boardVO) getTableRow().getItem()).getHwbd_frt();

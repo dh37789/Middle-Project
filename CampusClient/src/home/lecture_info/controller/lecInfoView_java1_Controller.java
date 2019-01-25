@@ -237,7 +237,6 @@ public class lecInfoView_java1_Controller {
 		xmlParser.parse(strReader);
 		document.add(img);
 		
-		
 		document.close();
 		writer.close();
 		Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "d:\\test.pdf");

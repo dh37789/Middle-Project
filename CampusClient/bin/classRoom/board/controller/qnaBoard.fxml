@@ -29,12 +29,13 @@
             <ComboBox fx:id="comSearch" layoutX="350.0" layoutY="100.0" prefHeight="23.0" prefWidth="111.0" />
             <TextField fx:id="tfSearch" layoutX="480.0" layoutY="100.0" prefHeight="23.0" prefWidth="220.0" />
             <Button fx:id="btnSearch" layoutX="715.0" layoutY="98.0" mnemonicParsing="false" onAction="#search" prefHeight="23.0" prefWidth="55.0" style="-fx-background-color: transparent;" />
-            <TableView fx:id="tableSub" layoutX="25.0" layoutY="152.0" onMouseClicked="#viewBoard" prefHeight="366.0" prefWidth="753.0">
+            <TableView fx:id="tableSub" layoutX="25.0" layoutY="152.0" onMouseClicked="#viewBoard" prefHeight="378.0" prefWidth="753.0">
                <columns>
                   <TableColumn fx:id="colNo" prefWidth="50.0" text="No" />
                   <TableColumn fx:id="colTi" prefWidth="434.0" text="제목" />
-                  <TableColumn fx:id="colWrr" prefWidth="95.0" text="작성자" />
-                  <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="173.0" text="작성일" />
+                  <TableColumn fx:id="colWrr" prefWidth="65.0" text="작성자" />
+                  <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="160.0" text="작성일" />
+                  <TableColumn fx:id="colLock" prefWidth="43.0" text="비밀글" />
                </columns>
             </TableView>
          </children>

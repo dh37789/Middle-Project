@@ -53,9 +53,9 @@
                   <Font name="Arial" size="15.0" />
                </font>
             </PasswordField>
-            <Label fx:id="lbPassChk" layoutX="281.0" layoutY="237.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
-            <Label fx:id="lbPassNew" layoutX="280.0" layoutY="181.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
-            <Label fx:id="lbPass" layoutX="281.0" layoutY="126.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
+            <Label fx:id="lbPassChk" alignment="CENTER" contentDisplay="CENTER" layoutX="269.0" layoutY="269.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
+            <Label fx:id="lbPassNew" alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="222.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
+            <Label fx:id="lbPass" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="177.0" prefHeight="15.0" prefWidth="226.0" style="-fx-text-fill: red;" />
          </children>
       </AnchorPane>
    </children>

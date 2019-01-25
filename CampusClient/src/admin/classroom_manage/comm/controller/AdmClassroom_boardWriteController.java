@@ -184,7 +184,8 @@ void insert() throws IOException{
 		} catch (NotBoundException e) {
 			e.printStackTrace();
 		}
-		 tfwriter.setEditable(true);
+		 tfwriter.setEditable(false);
+		 tfwriter.setText("admin");
 		 backbox.setOnMouseClicked(e->{
 	     	   try {
 				back();
