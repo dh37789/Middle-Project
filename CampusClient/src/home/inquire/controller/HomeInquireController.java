@@ -62,12 +62,12 @@ public class HomeInquireController {
 		//(SMTPS / POPS). setStartTLSRequired (boolean)보다 우선합니다
 		email.setSSLOnConnect(true);
 		email.setCharset("euc-kr"); // 한글로 인코딩
-		email.setFrom("jns37789@naver.com"); // 보내는 사람의 메일
+		email.setFrom(NAVER_MAIL); // 보내는 사람의 메일
 		String sub = "jns37789님의 문의 <" + tfTItle.getText() + ">";
 		email.setSubject(sub); // 메일의 제목
 		String content = "문의 내역입니다 : \n" + taCon.getText();
 		email.setMsg(content); // 메일의 본문
-		email.addTo("kangyuigu@naver.com"); // 받는 사람의 메일주소
+		email.addTo(NAVER_MAIL); // 받는 사람의 메일주소
 		email.send(); // 메일전송 메서드
 		alert(null, "전송이 완료되었습니다.");
 		System.out.println("전송 완료");
