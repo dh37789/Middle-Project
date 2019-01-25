@@ -117,18 +117,18 @@ public class PassSearchController {
     		email.setHostName("smtp.naver.com"); // SMTP 서버명
     		email.setSmtpPort(587); // SMTP 포트
     		// email을 보내는 사람의 아이디와 비밀번호
-    		email.setAuthenticator(new DefaultAuthenticator("jns37789", "dnjcl@9310")); // 아이디와 비밀번호 입력.
+    		email.setAuthenticator(new DefaultAuthenticator("NAVER_ID", "NEVER_PASS")); // 아이디와 비밀번호 입력.
     		//공개 이메일 setSSLOnConnect
     		//연결시 SMTP 전송에 대해 SSL / TLS 암호화를 사용할지 여부를 설정합니다 
     		//(SMTPS / POPS). setStartTLSRequired (boolean)보다 우선합니다
     		email.setSSLOnConnect(true);
     		email.setCharset("euc-kr"); // 한글로 인코딩
-    		email.setFrom("jns37789@naver.com"); // 보내는 사람의 메일
+    		email.setFrom(NAVER_MAIL); // 보내는 사람의 메일
     		String sub = strId + "님의 임시 비밀번호 발급안내";
     		email.setSubject(sub); // 메일의 제목
     		String content = strId + "님의 임시 비밀번호입니다. : " + uuid;
     		email.setMsg(content); // 메일의 본문
-    		email.addTo("jns37789@naver.com"); // 받는 사람의 메일주소
+    		email.addTo(NAVER_MAIL); // 받는 사람의 메일주소
     		email.send(); // 메일전송 메서드
     		Inform("임시 비밀번호가 전송되었습니다.");
     		System.out.println("전송 완료");
